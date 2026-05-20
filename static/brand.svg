@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">LB monogram</title>
+  <desc id="desc">A compact brand mark for the portfolio.</desc>
+  <rect width="120" height="120" rx="18" fill="#0f6b63"/>
+  <path d="M31 25h14v55h29v13H31V25Z" fill="#fff"/>
+  <path d="M62 25h24c12 0 21 8 21 19 0 7-4 13-10 16 7 3 12 9 12 18 0 12-10 20-23 20H62V85h23c6 0 10-3 10-8 0-6-4-9-10-9H62V55h22c6 0 9-3 9-8s-4-8-9-8H62V25Z" fill="#f3c6a6"/>
+</svg>

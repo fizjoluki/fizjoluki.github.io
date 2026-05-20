@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} home">
+          <img src="{{ "brand.svg" | relURL }}" width="40" height="40" alt="" aria-hidden="true">
+          <span>{{ site.Title }}</span>
+        </a>
+        <div class="nav-links">
+          <a href="{{ "#work" | relURL }}">Work</a>
+          <a href="{{ "#experience" | relURL }}">Experience</a>
+          <a href="{{ "#contact" | relURL }}">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
