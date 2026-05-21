@@ -1,6 +1,6 @@
 # fizjoluki.github.io
 
-Portfolio website built with [Hugo](https://gohugo.io/) and published to GitHub Pages with GitHub Actions.
+Fizjo Łuki website built with [Hugo](https://gohugo.io/) and published to GitHub Pages with GitHub Actions.
 
 ## Local development
 
@@ -10,7 +10,7 @@ Install Hugo Extended, then run:
 hugo server --buildDrafts
 ```
 
-The site content lives in `content/_index.md`. The custom layout and styling live in `layouts/` and `assets/css/main.css`.
+The site content lives in `content/_index.md`. The custom layout, icons, brand mark, and styling live in `layouts/`, `static/brand.svg`, and `assets/css/main.css`.
 
 ## Publishing
 

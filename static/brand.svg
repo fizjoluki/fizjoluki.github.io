@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
-  <title id="title">LB monogram</title>
-  <desc id="desc">A compact brand mark for the portfolio.</desc>
-  <rect width="120" height="120" rx="18" fill="#0f6b63"/>
-  <path d="M31 25h14v55h29v13H31V25Z" fill="#fff"/>
-  <path d="M62 25h24c12 0 21 8 21 19 0 7-4 13-10 16 7 3 12 9 12 18 0 12-10 20-23 20H62V85h23c6 0 10-3 10-8 0-6-4-9-10-9H62V55h22c6 0 9-3 9-8s-4-8-9-8H62V25Z" fill="#f3c6a6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 96" role="img" aria-labelledby="title desc">
+  <title id="title">Fizjo Łuki</title>
+  <desc id="desc">Logotyp Fizjo Łuki w stylu gabinetu rehabilitacji domowej.</desc>
+  <rect x="7" y="8" width="156" height="72" rx="13" fill="none" stroke="#21344f" stroke-width="5"/>
+  <path d="M163 27h34" stroke="#21344f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M163 63h34" stroke="#21344f" stroke-width="5" stroke-linecap="round"/>
+  <text x="28" y="47" fill="#21344f" font-family="Inter, Arial, sans-serif" font-size="42" font-style="italic" font-weight="800">Fizjo</text>
+  <text x="92" y="76" fill="#706858" font-family="Inter, Arial, sans-serif" font-size="34" font-style="italic" font-weight="750">Łuki</text>
 </svg>

@@ -1,20 +1,19 @@
 <!doctype html>
-<html lang="{{ site.Language.Locale | default "en" }}">
+<html lang="{{ site.Language.Locale | default "pl-PL" }}">
   <head>
     {{ partial "head.html" . }}
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
     <header class="site-header">
-      <nav class="site-nav" aria-label="Main navigation">
-        <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} home">
-          <img src="{{ "brand.svg" | relURL }}" width="40" height="40" alt="" aria-hidden="true">
-          <span>{{ site.Title }}</span>
+      <nav class="site-nav" aria-label="Główna nawigacja">
+        <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} strona główna">
+          <img src="{{ "brand.svg" | relURL }}" width="150" height="56" alt="{{ site.Title }}">
         </a>
         <div class="nav-links">
-          <a href="{{ "#work" | relURL }}">Work</a>
-          <a href="{{ "#experience" | relURL }}">Experience</a>
-          <a href="{{ "#contact" | relURL }}">Contact</a>
+          <a href="{{ "#oferta" | relURL }}">Oferta</a>
+          <a href="{{ "#dojazd" | relURL }}">Dojazd</a>
+          <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
         </div>
       </nav>
     </header>

@@ -1,6 +1,7 @@
 baseURL: "https://fizjoluki.github.io/"
-locale: "en-us"
-title: "Łukasz Bochenek"
+locale: "pl-PL"
+defaultContentLanguage: "pl"
+title: "Fizjo Łuki"
 enableRobotsTXT: true
 disableKinds:
   - taxonomy
@@ -11,5 +12,5 @@ caches:
     dir: :cacheDir/images
 
 params:
-  author: "Łukasz Bochenek"
-  description: "Portfolio website for Łukasz Bochenek."
+  author: "Fizjo Łuki"
+  description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
