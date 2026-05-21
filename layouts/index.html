@@ -16,15 +16,14 @@
     </div>
   </div>
 
-  <figure class="hero-visual" aria-label="Terapia domowa">
-    <div class="visual-room" aria-hidden="true">
-      <div class="window window-one"></div>
-      <div class="window window-two"></div>
-      <div class="plant"></div>
-      <div class="therapist"></div>
-      <div class="patient"></div>
-      <div class="therapy-bed"></div>
-    </div>
+  <figure class="hero-visual">
+    {{ with .Params.hero_photo }}
+      <img src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
+      <figcaption>
+        Zdjęcie poglądowe: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
+        <a href="{{ .license_url | safeURL }}">{{ .license_label }}</a>.
+      </figcaption>
+    {{ end }}
   </figure>
 
   <aside class="contact-rail" id="dojazd" aria-labelledby="rail-title">

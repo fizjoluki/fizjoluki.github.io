@@ -231,150 +231,38 @@ h3 {
 }
 
 .hero-visual {
+  background: #e4e1d8;
   border-top: 1px solid var(--line);
   margin: 0;
   min-height: clamp(24rem, 48vw, 36rem);
-}
-
-.visual-room {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0 1px, transparent 1px 34%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.58) 0 1px, transparent 1px 36%),
-    #e4e1d8;
-  height: clamp(24rem, 48vw, 36rem);
-  min-height: 24rem;
   overflow: hidden;
   position: relative;
 }
 
-.visual-room::before {
-  background: rgba(255, 255, 255, 0.43);
-  content: "";
-  inset: 7% 10% 41% 28%;
+.hero-visual img {
+  height: clamp(24rem, 48vw, 36rem);
+  min-height: 24rem;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.hero-visual figcaption {
+  background: rgba(20, 35, 63, 0.78);
+  border-radius: 6px;
+  bottom: 1rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.72rem;
+  left: 1rem;
+  line-height: 1.35;
+  margin: 0;
+  max-width: calc(100% - 2rem);
+  padding: 0.45rem 0.6rem;
   position: absolute;
 }
 
-.window {
-  background: rgba(255, 255, 255, 0.55);
-  border-left: 1px solid rgba(35, 52, 78, 0.14);
-  border-right: 1px solid rgba(35, 52, 78, 0.1);
-  position: absolute;
-  top: 0;
-}
-
-.window-one {
-  height: 42%;
-  left: 30%;
-  width: 16%;
-}
-
-.window-two {
-  height: 52%;
-  right: 16%;
-  width: 21%;
-}
-
-.therapy-bed {
-  background: #d0ccc1;
-  border: 1px solid rgba(35, 52, 78, 0.22);
-  border-radius: 999px 16px 16px 999px;
-  bottom: 18%;
-  box-shadow: 0 14px 0 rgba(35, 52, 78, 0.08);
-  height: 17%;
-  left: 10%;
-  position: absolute;
-  width: 82%;
-}
-
-.therapy-bed::before {
-  background: #f1eee6;
-  border-radius: 999px;
-  content: "";
-  height: 62%;
-  left: 5%;
-  position: absolute;
-  top: -24%;
-  width: 28%;
-}
-
-.patient {
-  background: #7b8285;
-  border-radius: 999px 999px 22px 22px;
-  bottom: 27%;
-  height: 8%;
-  left: 24%;
-  position: absolute;
-  transform: rotate(4deg);
-  width: 54%;
-}
-
-.patient::before {
-  background: #d4c3b0;
-  border-radius: 50%;
-  content: "";
-  height: 3.9rem;
-  left: -2.2rem;
-  position: absolute;
-  top: -1.45rem;
-  width: 3.9rem;
-}
-
-.patient::after {
-  background: var(--blue-deep);
-  border-radius: 1rem;
-  content: "";
-  height: 1.1rem;
-  position: absolute;
-  right: -1.4rem;
-  top: 1rem;
-  width: 4.4rem;
-}
-
-.therapist {
-  background: #6b625b;
-  border-radius: 40% 40% 14px 14px;
-  bottom: 39%;
-  height: 28%;
-  left: 52%;
-  position: absolute;
-  transform: rotate(3deg);
-  width: 22%;
-}
-
-.therapist::before {
-  background: #cfae92;
-  border-radius: 50% 50% 44% 44%;
-  content: "";
-  height: 3.8rem;
-  left: 50%;
-  position: absolute;
-  top: -3.55rem;
-  transform: translateX(-50%);
-  width: 3.45rem;
-}
-
-.therapist::after {
-  background: #cfae92;
-  border-radius: 999px;
-  box-shadow: -4.9rem 4.15rem 0 #cfae92;
-  content: "";
-  height: 1.1rem;
-  left: -1.2rem;
-  position: absolute;
-  top: 6.2rem;
-  transform: rotate(34deg);
-  width: 7rem;
-}
-
-.plant {
-  border-bottom: 3.2rem solid rgba(24, 61, 58, 0.18);
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  bottom: 35%;
-  height: 0;
-  position: absolute;
-  right: 8%;
-  width: 2.8rem;
+.hero-visual figcaption a {
+  color: inherit;
 }
 
 .contact-rail {
@@ -673,7 +561,8 @@ h3 {
     min-height: 24rem;
   }
 
-  .visual-room {
+  .hero-visual img {
+    height: 24rem;
     min-height: 24rem;
   }
 
@@ -718,13 +607,9 @@ h3 {
     width: 100%;
   }
 
-  .patient::before {
-    height: 3rem;
-    width: 3rem;
-  }
-
-  .therapist {
-    left: 50%;
-    width: 27%;
+  .hero-visual figcaption {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    max-width: calc(100% - 1.5rem);
   }
 }

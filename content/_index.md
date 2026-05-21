@@ -5,6 +5,13 @@ headline: "Profesjonalna rehabilitacja domowa"
 tagline: "Fizjo Łuki"
 intro: "Z dojazdem do Pacjenta"
 hero_note: "Indywidualna terapia w Twoim domu, dopasowana do Twoich możliwości i potrzeb."
+hero_photo:
+  src: "https://images.pexels.com/photos/20860583/pexels-photo-20860583.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  alt: "Fizjoterapeuta prowadzi pacjenta przez ćwiczenie rehabilitacyjne."
+  credit_label: "Funkcinės Terapijos Centras / Pexels"
+  credit_url: "https://www.pexels.com/photo/man-exercising-with-physiotherapist-20860583/"
+  license_label: "Licencja Pexels"
+  license_url: "https://www.pexels.com/license/"
 primary_action:
   label: "Umów wizytę"
   url: "tel:+48123456789"
