@@ -1,0 +1,111 @@
+{{ define "main" }}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ .Params.tagline }}</p>
+    <h1 id="hero-title">{{ .Params.headline }}</h1>
+    <p class="hero-intro">{{ .Params.intro }}</p>
+    <div class="section-rule" aria-hidden="true"></div>
+    <p class="hero-note">{{ .Params.hero_note }}</p>
+    <div class="actions">
+      {{ with .Params.primary_action }}
+        <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
+      {{ end }}
+      {{ with .Params.secondary_action }}
+        <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
+      {{ end }}
+    </div>
+  </div>
+
+  <figure class="hero-visual">
+    {{ with .Params.hero_photo }}
+      <img src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
+      <figcaption>
+        Zdjęcie poglądowe: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
+        <a href="{{ .license_url | safeURL }}">{{ .license_label }}</a>.
+      </figcaption>
+    {{ end }}
+  </figure>
+
+  <aside class="contact-rail" id="dojazd" aria-labelledby="rail-title">
+    <div class="rail-icon" aria-hidden="true">{{ partial "icon.html" "car" }}</div>
+    <h2 id="rail-title">{{ .Params.rail.title }}</h2>
+    {{ range .Params.rail.text }}
+      <p>{{ . }}</p>
+    {{ end }}
+    <blockquote>{{ .Params.rail.quote }}</blockquote>
+    <ul class="rail-contact" aria-label="Dane kontaktowe">
+      {{ with .Params.contact.phone }}
+        <li>{{ partial "icon.html" "phone" }} <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">{{ . }}</a></li>
+      {{ end }}
+      {{ with .Params.contact.email }}
+        <li>{{ partial "icon.html" "mail" }} <a href="mailto:{{ . }}">{{ . }}</a></li>
+      {{ end }}
+      {{ with .Params.contact.website }}
+        <li>{{ partial "icon.html" "globe" }} <span>{{ . }}</span></li>
+      {{ end }}
+    </ul>
+    <img class="rail-logo" src="{{ "brand.svg" | relURL }}" width="132" height="49" alt="{{ site.Title }}">
+  </aside>
+</section>
+
+<section class="benefits" aria-label="Najważniejsze korzyści">
+  {{ range .Params.benefits }}
+    <article class="benefit-item">
+      <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
+      <h2>{{ .title }}</h2>
+      <p>{{ .summary }}</p>
+    </article>
+  {{ end }}
+</section>
+
+<section class="offer" id="oferta" aria-labelledby="offer-title">
+  <div class="section-heading">
+    <p class="eyebrow">Oferta</p>
+    <h2 id="offer-title">Rehabilitacja dopasowana do Pacjenta</h2>
+  </div>
+  <div class="service-list">
+    {{ range .Params.services }}
+      <article class="service-item">
+        <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .summary }}</p>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="manual" aria-labelledby="manual-title">
+  <div>
+    <p class="eyebrow">Terapia</p>
+    <h2 id="manual-title">{{ .Params.manual.title }}</h2>
+    <p>{{ .Params.manual.summary }}</p>
+    <p class="manual-note">{{ .Params.manual.note }}</p>
+  </div>
+  <div class="spine-illustration" aria-hidden="true">
+    {{ partial "icon.html" "spine" }}
+  </div>
+</section>
+
+<section class="value-strip" aria-label="Wartości">
+  {{ range .Params.values }}
+    <span>{{ . }}</span>
+  {{ end }}
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="contact-title">
+  <div>
+    <p class="eyebrow">Kontakt</p>
+    <h2 id="contact-title">Umów wizytę lub zapytaj o szczegóły</h2>
+  </div>
+  <div class="contact-links">
+    {{ with .Params.contact.phone }}
+      <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">{{ partial "icon.html" "phone" }} {{ . }}</a>
+    {{ end }}
+    {{ with .Params.contact.email }}
+      <a href="mailto:{{ . }}">{{ partial "icon.html" "mail" }} {{ . }}</a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

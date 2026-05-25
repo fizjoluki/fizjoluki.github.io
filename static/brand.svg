@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 96" role="img" aria-labelledby="title desc">
+  <title id="title">Fizjo Łuki</title>
+  <desc id="desc">Logotyp Fizjo Łuki w stylu gabinetu rehabilitacji domowej.</desc>
+  <rect x="7" y="8" width="156" height="72" rx="13" fill="none" stroke="#21344f" stroke-width="5"/>
+  <path d="M163 27h34" stroke="#21344f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M163 63h34" stroke="#21344f" stroke-width="5" stroke-linecap="round"/>
+  <text x="28" y="47" fill="#21344f" font-family="Inter, Arial, sans-serif" font-size="42" font-style="italic" font-weight="800">Fizjo</text>
+  <text x="92" y="76" fill="#706858" font-family="Inter, Arial, sans-serif" font-size="34" font-style="italic" font-weight="750">Łuki</text>
+</svg>

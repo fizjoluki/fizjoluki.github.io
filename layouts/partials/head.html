@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ .Description | default site.Params.description }}">
+<meta name="author" content="{{ site.Params.author }}">
+{{ with site.Params.copyright }}<meta name="copyright" content="{{ . }}">{{ end }}
+{{ with site.Params.rights }}<meta name="rights" content="{{ . }}">{{ end }}
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}">
+<meta property="og:description" content="{{ .Description | default site.Params.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+<link rel="icon" href="{{ "brand.svg" | relURL }}" type="image/svg+xml">
+{{ with resources.Get "css/main.css" }}
+  {{ $styles := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{ end }}

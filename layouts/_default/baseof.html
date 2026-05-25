@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "pl-PL" }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Główna nawigacja">
+        <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} strona główna">
+          <img src="{{ "brand.svg" | relURL }}" width="150" height="56" alt="{{ site.Title }}">
+        </a>
+        <div class="nav-links">
+          <a href="{{ "#oferta" | relURL }}">Oferta</a>
+          <a href="{{ "#dojazd" | relURL }}">Dojazd</a>
+          <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

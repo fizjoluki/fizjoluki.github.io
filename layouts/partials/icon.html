@@ -1,0 +1,76 @@
+{{- $icon := . -}}
+{{- if eq $icon "home" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M8 24 24 10l16 14"/>
+  <path d="M13 21v18h22V21"/>
+  <path d="M18 31c0-4 6-5 6 0 0-5 7-4 7 1 0 5-7 9-7 9s-6-4-6-10Z"/>
+</svg>
+{{- else if eq $icon "brain" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M21 10c-4 0-7 3-7 7-3 1-5 4-5 8s2 7 5 8c0 4 3 7 7 7 2 0 3-.5 5-2V12c-2-1.4-3-2-5-2Z"/>
+  <path d="M27 12c2-1.4 3-2 5-2 4 0 7 3 7 7 3 1 5 4 5 8s-2 7-5 8c0 4-3 7-7 7-2 0-3-.5-5-2V12Z"/>
+  <path d="M17 19c3 0 5 2 5 5"/>
+  <path d="M31 19c-3 0-5 2-5 5"/>
+  <path d="M16 31c3 0 5-2 5-5"/>
+  <path d="M32 31c-3 0-5-2-5-5"/>
+</svg>
+{{- else if eq $icon "person" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="24" cy="11" r="5"/>
+  <path d="M14 42V26c0-5 4-9 10-9s10 4 10 9v16"/>
+  <path d="M24 24v18"/>
+  <path d="M16 31h16"/>
+</svg>
+{{- else if eq $icon "senior" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="23" cy="10" r="4"/>
+  <path d="M21 17h7l4 10"/>
+  <path d="M22 17 17 29l-3 13"/>
+  <path d="M27 27v15"/>
+  <path d="M34 29v13"/>
+  <path d="M34 29c3 0 5 2 5 5v8"/>
+</svg>
+{{- else if eq $icon "scalpel" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m12 37 9-9"/>
+  <path d="m20 28 16-16c2-2 6 2 4 4L24 32"/>
+  <path d="m13 37 5 5 8-8-5-5-8 8Z"/>
+  <path d="m30 18 4 4"/>
+</svg>
+{{- else if eq $icon "car" -}}
+<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M9 31h30v-9l-5-7H18l-5 7H9v9Z"/>
+  <path d="M17 22h20"/>
+  <circle cx="16" cy="34" r="4"/>
+  <circle cx="34" cy="34" r="4"/>
+  <path d="M8 26h4"/>
+  <path d="M39 26h3"/>
+</svg>
+{{- else if eq $icon "phone" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>
+</svg>
+{{- else if eq $icon "mail" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M4 4h16v16H4z"/>
+  <path d="m4 7 8 6 8-6"/>
+</svg>
+{{- else if eq $icon "globe" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M2 12h20"/>
+  <path d="M12 2a15 15 0 0 1 0 20"/>
+  <path d="M12 2a15 15 0 0 0 0 20"/>
+</svg>
+{{- else if eq $icon "spine" -}}
+<svg viewBox="0 0 160 210" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M95 14c-5 23-3 43 8 60 9 13 8 26-2 40-10 15-12 30-5 47 5 12 6 24 2 35"/>
+  <path d="M74 21c-12 26-10 48 8 66 9 9 10 19 2 30-10 13-13 27-7 42 5 13 4 25-3 38"/>
+  <path d="M93 46c-8-2-16-2-24 2"/>
+  <path d="M99 65c-9-2-18-1-27 3"/>
+  <path d="M104 89c-10-3-20-2-30 4"/>
+  <path d="M99 115c-9-3-18-1-27 4"/>
+  <path d="M94 141c-8-3-17-2-25 4"/>
+  <path d="M98 166c-9-2-18-1-27 3"/>
+</svg>
+{{- end -}}
