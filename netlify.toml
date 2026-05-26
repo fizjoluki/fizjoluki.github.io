@@ -1,0 +1,14 @@
+[build]
+  command = "hugo --gc --minify --baseURL \"$URL/\""
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.161.1"
+  HUGO_ENVIRONMENT = "production"
+  TZ = "Europe/Warsaw"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --baseURL \"$DEPLOY_PRIME_URL/\""
+
+[context.deploy-preview.environment]
+  HUGO_ENVIRONMENT = "preview"
