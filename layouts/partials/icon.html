@@ -62,6 +62,22 @@
   <path d="M12 2a15 15 0 0 1 0 20"/>
   <path d="M12 2a15 15 0 0 0 0 20"/>
 </svg>
+{{- else if eq $icon "moon" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M20.5 14.2A8.2 8.2 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>
+</svg>
+{{- else if eq $icon "sun" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="12" cy="12" r="4"/>
+  <path d="M12 2v2"/>
+  <path d="M12 20v2"/>
+  <path d="m4.9 4.9 1.4 1.4"/>
+  <path d="m17.7 17.7 1.4 1.4"/>
+  <path d="M2 12h2"/>
+  <path d="M20 12h2"/>
+  <path d="m6.3 17.7-1.4 1.4"/>
+  <path d="m19.1 4.9-1.4 1.4"/>
+</svg>
 {{- else if eq $icon "spine" -}}
 <svg viewBox="0 0 160 210" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
   <path d="M95 14c-5 23-3 43 8 60 9 13 8 26-2 40-10 15-12 30-5 47 5 12 6 24 2 35"/>
