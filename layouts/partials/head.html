@@ -1,7 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#eeece5">
+<meta name="theme-color" content="#eeece5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
 <script>
   (function () {
     var storageKey = "fizjoluki-theme";
@@ -9,7 +10,7 @@
     var colors = { light: "#eeece5", dark: "#101820" };
     var root = document.documentElement;
     var media = window.matchMedia ? window.matchMedia(darkQuery) : null;
-    var themeColor = null;
+    var themeColors = null;
 
     function getStoredTheme() {
       try {
@@ -32,9 +33,9 @@
     }
 
     function syncThemeColor(theme) {
-      themeColor = themeColor || document.querySelector('meta[name="theme-color"]');
-      if (themeColor) {
-        themeColor.setAttribute("content", colors[theme]);
+      themeColors = themeColors || document.querySelectorAll('meta[name="theme-color"]');
+      for (var i = 0; i < themeColors.length; i++) {
+        themeColors[i].setAttribute("content", colors[theme]);
       }
     }
 
@@ -45,6 +46,7 @@
 
       button.dataset.themeCurrent = current;
       button.setAttribute("aria-label", label);
+      button.setAttribute("aria-pressed", current === "dark" ? "true" : "false");
       button.setAttribute("title", label);
     }
 
