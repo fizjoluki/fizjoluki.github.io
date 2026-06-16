@@ -732,7 +732,7 @@ h3 {
   .benefits,
   .manual,
   .not-found {
-    width: min(100% - 1rem, var(--content));
+    width: min(calc(100% - 1rem), var(--content));
   }
 
   .site-nav {
