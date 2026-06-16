@@ -20,7 +20,7 @@ RUN set -eux; \
     esac; \
     curl -fsSL \
         -o /tmp/hugo.tar.gz \
-        "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${hugo_arch}.tar.gz"; \
+        "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${hugo_arch}.tar.gz"; \
     tar -xzf /tmp/hugo.tar.gz -C /usr/local/bin hugo; \
     rm /tmp/hugo.tar.gz; \
     hugo version

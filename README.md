@@ -4,7 +4,7 @@ Fizjo Łuki website built with [Hugo](https://gohugo.io/) and published to GitHu
 
 ## Local development
 
-Install Hugo Extended, then run:
+Install Hugo, then run:
 
 ```sh
 make dev
@@ -17,6 +17,8 @@ The site content lives in `content/_index.md`. The custom layout, icons, brand m
 The workflow in `.github/workflows/hugo.yaml` builds the site on pushes to `main` and deploys the generated `public/` directory to GitHub Pages.
 
 In the repository settings on GitHub, set **Pages > Build and deployment > Source** to **GitHub Actions** and set the custom domain to `fizjoluki.pl`. With a custom GitHub Actions workflow, GitHub does not require a `CNAME` file in the repository.
+
+The pinned Hugo version is managed by Renovate across GitHub Actions, Netlify, and the devcontainer files.
 
 ## Netlify deploy previews
 
