@@ -8,16 +8,12 @@
     <header class="site-header">
       <nav class="site-nav" aria-label="Główna nawigacja">
         <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} strona główna">
-          <img src="{{ "brand.svg" | relURL }}" width="150" height="56" alt="{{ site.Title }}">
+          <img src="{{ "logo.png" | relURL }}" width="164" height="106" alt="{{ site.Title }}">
         </a>
         <div class="nav-links">
           <a href="{{ "#oferta" | relURL }}">Oferta</a>
           <a href="{{ "#dojazd" | relURL }}">Dojazd</a>
           <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
-          <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Zmień tryb kolorów" aria-pressed="false">
-            <span class="theme-toggle-icon theme-toggle-icon-dark" aria-hidden="true">{{ partial "icon.html" "moon" }}</span>
-            <span class="theme-toggle-icon theme-toggle-icon-light" aria-hidden="true">{{ partial "icon.html" "sun" }}</span>
-          </button>
         </div>
       </nav>
     </header>
