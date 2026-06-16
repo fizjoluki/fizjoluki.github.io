@@ -1,0 +1,30 @@
+{
+  "name": "Fizjo Luki Hugo",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "HUGO_VERSION": "0.161.1"
+    }
+  },
+  "containerEnv": {
+    "TZ": "Europe/Warsaw"
+  },
+  "forwardPorts": [
+    1313
+  ],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo development server",
+      "onAutoForward": "openPreview",
+      "protocol": "http"
+    }
+  },
+  "postCreateCommand": "hugo version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "budparr.language-hugo-vscode"
+      ]
+    }
+  }
+}
