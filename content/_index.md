@@ -1,7 +1,7 @@
 ---
 title: "Rehabilitacja domowa"
 description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
-headline: "Profesjonalna rehabilitacja domowa"
+headline: "Rehabilitacja domowa"
 tagline: "Fizjo Łuki"
 intro: "Z dojazdem do Pacjenta"
 hero_note: "Indywidualna terapia w Twoim domu, dopasowana do Twoich możliwości i potrzeb."
@@ -15,7 +15,7 @@ hero_photo:
   license_url: "https://www.pexels.com/license/"
 primary_action:
   label: "Umów wizytę"
-  url: "tel:+48123456789"
+  url: "tel:+48123123123"
 secondary_action:
   label: "Zobacz ofertę"
   url: "#oferta"
@@ -53,7 +53,7 @@ values:
   - "Uważność"
   - "Zaufanie"
 contact:
-  phone: "+48 123 456 789"
+  phone: "+48 123 123 123"
   email: "kontakt@fizjoluki.pl"
   website: "fizjoluki.pl"
 ---
