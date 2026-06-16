@@ -717,8 +717,10 @@ h3 {
   }
 
   .nav-links a {
+    align-items: center;
+    display: inline-flex;
     font-size: 0.78rem;
-    min-height: 2.25rem;
+    min-height: 2.75rem;
     padding: 0.45rem 0.55rem;
   }
 
