@@ -4,7 +4,7 @@ Fizjo Łuki website built with [Hugo](https://gohugo.io/) and published to GitHu
 
 ## Local development
 
-Install Hugo Extended, then run:
+Install Hugo, then run:
 
 ```sh
 make dev
