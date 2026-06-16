@@ -1,5 +1,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#eeece5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
+<script>
+  (function () {
+    var storageKey = "fizjoluki-theme";
+    var darkQuery = "(prefers-color-scheme: dark)";
+    var colors = { light: "#eeece5", dark: "#101820" };
+    var root = document.documentElement;
+    var media = window.matchMedia ? window.matchMedia(darkQuery) : null;
+    var themeColors = null;
+
+    function getStoredTheme() {
+      try {
+        var theme = localStorage.getItem(storageKey);
+        return theme === "light" || theme === "dark" ? theme : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function setStoredTheme(theme) {
+      try {
+        localStorage.setItem(storageKey, theme);
+      } catch (error) {
+      }
+    }
+
+    function getResolvedTheme() {
+      return root.dataset.theme || (media && media.matches ? "dark" : "light");
+    }
+
+    function syncThemeColor(theme) {
+      themeColors = themeColors || document.querySelectorAll('meta[name="theme-color"]');
+      for (var i = 0; i < themeColors.length; i++) {
+        themeColors[i].setAttribute("content", colors[theme]);
+      }
+    }
+
+    function updateButton(button) {
+      var current = getResolvedTheme();
+      var next = current === "dark" ? "light" : "dark";
+      var label = next === "dark" ? "Włącz ciemny tryb" : "Włącz jasny tryb";
+
+      button.dataset.themeCurrent = current;
+      button.setAttribute("aria-label", label);
+      button.setAttribute("aria-pressed", current === "dark" ? "true" : "false");
+      button.setAttribute("title", label);
+    }
+
+    function initThemeToggle() {
+      var button = document.querySelector("[data-theme-toggle]");
+      if (!button) {
+        return;
+      }
+
+      button.hidden = false;
+      updateButton(button);
+
+      button.addEventListener("click", function () {
+        var next = getResolvedTheme() === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        setStoredTheme(next);
+        syncThemeColor(next);
+        updateButton(button);
+      });
+
+      if (media) {
+        var onChange = function () {
+          if (!getStoredTheme()) {
+            syncThemeColor(getResolvedTheme());
+            updateButton(button);
+          }
+        };
+
+        if (media.addEventListener) {
+          media.addEventListener("change", onChange);
+        } else if (media.addListener) {
+          media.addListener(onChange);
+        }
+      }
+    }
+
+    var storedTheme = getStoredTheme();
+    if (storedTheme) {
+      root.dataset.theme = storedTheme;
+    }
+    syncThemeColor(storedTheme || (media && media.matches ? "dark" : "light"));
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initThemeToggle);
+    } else {
+      initThemeToggle();
+    }
+  })();
+</script>
 <meta name="description" content="{{ .Description | default site.Params.description }}">
 <meta name="author" content="{{ site.Params.author }}">
 {{ with site.Params.copyright }}<meta name="copyright" content="{{ . }}">{{ end }}

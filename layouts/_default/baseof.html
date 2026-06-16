@@ -14,6 +14,10 @@
           <a href="{{ "#oferta" | relURL }}">Oferta</a>
           <a href="{{ "#dojazd" | relURL }}">Dojazd</a>
           <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
+          <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Zmień tryb kolorów" aria-pressed="false">
+            <span class="theme-toggle-icon theme-toggle-icon-dark" aria-hidden="true">{{ partial "icon.html" "moon" }}</span>
+            <span class="theme-toggle-icon theme-toggle-icon-light" aria-hidden="true">{{ partial "icon.html" "sun" }}</span>
+          </button>
         </div>
       </nav>
     </header>
