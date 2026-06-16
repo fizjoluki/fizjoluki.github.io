@@ -45,7 +45,7 @@ manual:
 rail:
   title: "Dojazd do Pacjenta"
   text:
-    - "Obsługuję Jaworzno i okolice."
+    - "Obsługuję Kraków i okolice."
     - "Przyjeżdżam z pełnym wyposażeniem, aby terapia w domu była tak samo skuteczna jak w gabinecie."
   quote: "Najważniejsze jest to, co realnie poprawia Twoją codzienność."
 values:
