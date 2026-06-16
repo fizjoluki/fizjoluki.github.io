@@ -1,11 +1,29 @@
 baseURL: "https://fizjoluki.github.io/"
-locale: "pl-PL"
 defaultContentLanguage: "pl"
+defaultContentLanguageInSubdir: false
 title: "Fizjo Łuki"
 enableRobotsTXT: true
 disableKinds:
   - taxonomy
   - term
+
+languages:
+  pl:
+    label: "Polski"
+    weight: 1
+    locale: "pl-PL"
+    title: "Fizjo Łuki"
+    params:
+      description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
+      rights: "Treść i projekt strony są chronione prawem autorskim. Materiały zewnętrzne zachowują własne licencje."
+  en:
+    label: "English"
+    weight: 2
+    locale: "en-US"
+    title: "Fizjo Łuki"
+    params:
+      description: "Professional home rehabilitation with patient visits."
+      rights: "Site content and design are protected by copyright. External resources retain their own licenses."
 
 caches:
   images:
@@ -16,3 +34,8 @@ params:
   description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
   copyright: "© 2026 Fizjo Łuki. Wszelkie prawa zastrzeżone."
   rights: "Treść i projekt strony są chronione prawem autorskim. Materiały zewnętrzne zachowują własne licencje."
+  languages:
+    - lang: pl
+      label: Polski
+    - lang: en
+      label: English

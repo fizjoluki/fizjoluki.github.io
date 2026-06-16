@@ -1,23 +1,32 @@
 <!doctype html>
-<html lang="{{ site.Language.Locale | default "pl-PL" }}">
+<html lang="{{ .Site.Language.Lang | default "pl" }}">
   <head>
     {{ partial "head.html" . }}
   </head>
   <body>
-    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <a class="skip-link" href="#main">{{ i18n "skip_to_content" }}</a>
     <header class="site-header">
-      <nav class="site-nav" aria-label="Główna nawigacja">
-        <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} strona główna">
+      <nav class="site-nav" aria-label="{{ i18n "main_navigation" }}">
+        <a class="brand" href="{{ "/" | relLangURL }}" aria-label="{{ site.Title }} {{ i18n "home_page" }}">
           <img src="{{ "brand.svg" | relURL }}" width="150" height="56" alt="{{ site.Title }}">
         </a>
         <div class="nav-links">
-          <a href="{{ "#oferta" | relURL }}">Oferta</a>
-          <a href="{{ "#dojazd" | relURL }}">Dojazd</a>
-          <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
-          <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Zmień tryb kolorów" aria-pressed="false">
+          <a href="{{ "#oferta" | relLangURL }}">{{ i18n "nav_offer" }}</a>
+          <a href="{{ "#dojazd" | relLangURL }}">{{ i18n "nav_travel" }}</a>
+          <a href="{{ "#kontakt" | relLangURL }}">{{ i18n "nav_contact" }}</a>
+          <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="{{ i18n "theme_toggle" }}" aria-pressed="false">
             <span class="theme-toggle-icon theme-toggle-icon-dark" aria-hidden="true">{{ partial "icon.html" "moon" }}</span>
             <span class="theme-toggle-icon theme-toggle-icon-light" aria-hidden="true">{{ partial "icon.html" "sun" }}</span>
           </button>
+        </div>
+        <div class="lang-switcher" aria-label="{{ i18n "language_selector" }}">
+          {{ range .Site.Params.languages }}
+            {{ $url := "/" }}
+            {{ if ne .lang "pl" }}
+              {{ $url = printf "/%s/" .lang }}
+            {{ end }}
+            <a class="lang-link{{ if eq .lang $.Site.Language.Lang }} active{{ end }}" href="{{ $url }}" hreflang="{{ .lang }}">{{ .label }}</a>
+          {{ end }}
         </div>
       </nav>
     </header>

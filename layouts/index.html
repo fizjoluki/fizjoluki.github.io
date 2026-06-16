@@ -20,7 +20,7 @@
     {{ with .Params.hero_photo }}
       <img src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
       <figcaption>
-        Zdjęcie poglądowe: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
+        {{ i18n "hero_photo_caption" }}: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
         <a href="{{ .license_url | safeURL }}">{{ .license_label }}</a>.
       </figcaption>
     {{ end }}
@@ -33,7 +33,7 @@
       <p>{{ . }}</p>
     {{ end }}
     <blockquote>{{ .Params.rail.quote }}</blockquote>
-    <ul class="rail-contact" aria-label="Dane kontaktowe">
+    <ul class="rail-contact" aria-label="{{ i18n "contact_details" }}">
       {{ with .Params.contact.phone }}
         <li>{{ partial "icon.html" "phone" }} <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">{{ . }}</a></li>
       {{ end }}
@@ -48,7 +48,7 @@
   </aside>
 </section>
 
-<section class="benefits" aria-label="Najważniejsze korzyści">
+<section class="benefits" aria-label="{{ i18n "benefits_section" }}">
   {{ range .Params.benefits }}
     <article class="benefit-item">
       <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
@@ -60,8 +60,8 @@
 
 <section class="offer" id="oferta" aria-labelledby="offer-title">
   <div class="section-heading">
-    <p class="eyebrow">Oferta</p>
-    <h2 id="offer-title">Rehabilitacja dopasowana do Pacjenta</h2>
+    <p class="eyebrow">{{ i18n "offer_section_eyebrow" }}</p>
+    <h2 id="offer-title">{{ i18n "offer_section_title" }}</h2>
   </div>
   <div class="service-list">
     {{ range .Params.services }}
@@ -78,7 +78,7 @@
 
 <section class="manual" aria-labelledby="manual-title">
   <div>
-    <p class="eyebrow">Terapia</p>
+    <p class="eyebrow">{{ i18n "manual_section_eyebrow" }}</p>
     <h2 id="manual-title">{{ .Params.manual.title }}</h2>
     <p>{{ .Params.manual.summary }}</p>
     <p class="manual-note">{{ .Params.manual.note }}</p>
@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<section class="value-strip" aria-label="Wartości">
+<section class="value-strip" aria-label="{{ i18n "values_section" }}">
   {{ range .Params.values }}
     <span>{{ . }}</span>
   {{ end }}
@@ -96,8 +96,8 @@
 
 <section class="contact" id="kontakt" aria-labelledby="contact-title">
   <div>
-    <p class="eyebrow">Kontakt</p>
-    <h2 id="contact-title">Umów wizytę lub zapytaj o szczegóły</h2>
+    <p class="eyebrow">{{ i18n "contact_section_eyebrow" }}</p>
+    <h2 id="contact-title">{{ i18n "contact_section_title" }}</h2>
   </div>
   <div class="contact-links">
     {{ with .Params.contact.phone }}

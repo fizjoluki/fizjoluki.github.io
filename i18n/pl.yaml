@@ -1,0 +1,34 @@
+- id: skip_to_content
+  translation: "Przejdź do treści"
+- id: main_navigation
+  translation: "Główna nawigacja"
+- id: home_page
+  translation: "strona główna"
+- id: nav_offer
+  translation: "Oferta"
+- id: nav_travel
+  translation: "Dojazd"
+- id: nav_contact
+  translation: "Kontakt"
+- id: theme_toggle
+  translation: "Zmień tryb kolorów"
+- id: language_selector
+  translation: "Wybór języka"
+- id: hero_photo_caption
+  translation: "Zdjęcie poglądowe"
+- id: contact_details
+  translation: "Dane kontaktowe"
+- id: benefits_section
+  translation: "Najważniejsze korzyści"
+- id: offer_section_eyebrow
+  translation: "Oferta"
+- id: offer_section_title
+  translation: "Rehabilitacja dopasowana do Pacjenta"
+- id: manual_section_eyebrow
+  translation: "Terapia"
+- id: values_section
+  translation: "Wartości"
+- id: contact_section_eyebrow
+  translation: "Kontakt"
+- id: contact_section_title
+  translation: "Umów wizytę lub zapytaj o szczegóły"

@@ -1,0 +1,34 @@
+- id: skip_to_content
+  translation: "Skip to content"
+- id: main_navigation
+  translation: "Main navigation"
+- id: home_page
+  translation: "home page"
+- id: nav_offer
+  translation: "Offer"
+- id: nav_travel
+  translation: "Travel"
+- id: nav_contact
+  translation: "Contact"
+- id: theme_toggle
+  translation: "Toggle color mode"
+- id: language_selector
+  translation: "Language selector"
+- id: hero_photo_caption
+  translation: "Illustrative photo"
+- id: contact_details
+  translation: "Contact details"
+- id: benefits_section
+  translation: "Key benefits"
+- id: offer_section_eyebrow
+  translation: "Offer"
+- id: offer_section_title
+  translation: "Tailored rehabilitation"
+- id: manual_section_eyebrow
+  translation: "Therapy"
+- id: values_section
+  translation: "Values"
+- id: contact_section_eyebrow
+  translation: "Contact"
+- id: contact_section_title
+  translation: "Book an appointment or ask for details"

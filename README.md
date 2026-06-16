@@ -10,7 +10,9 @@ Install Hugo Extended, then run:
 hugo server --buildDrafts
 ```
 
-The site content lives in `content/_index.md`. The custom layout, icons, brand mark, and styling live in `layouts/`, `static/brand.svg`, and `assets/css/main.css`.
+The site supports Polish and English. Polish is the default language at `/`, and English is available at `/en/`.
+
+The site content lives in `content/_index.md` for Polish and `content/en/_index.md` for English. The custom layout, icons, brand mark, and styling live in `layouts/`, `static/brand.svg`, and `assets/css/main.css`.
 
 ## Publishing
 
