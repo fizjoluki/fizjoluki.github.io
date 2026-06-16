@@ -7,7 +7,7 @@ Fizjo Łuki website built with [Hugo](https://gohugo.io/) and published to GitHu
 Install Hugo Extended, then run:
 
 ```sh
-hugo server --buildDrafts
+make dev
 ```
 
 The site content lives in `content/_index.md`. The custom layout, icons, brand mark, and styling live in `layouts/`, `static/brand.svg`, and `assets/css/main.css`.
