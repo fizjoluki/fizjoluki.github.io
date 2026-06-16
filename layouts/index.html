@@ -20,14 +20,14 @@
     {{ with .Params.hero_photo }}
       <img src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
       <figcaption>
-        Zdjęcie poglądowe: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
+        Zdjęcie: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
         <a href="{{ .license_url | safeURL }}">{{ .license_label }}</a>.
       </figcaption>
     {{ end }}
   </figure>
 
-  <aside class="contact-rail" id="dojazd" aria-labelledby="rail-title">
-    <div class="rail-icon" aria-hidden="true">{{ partial "icon.html" "car" }}</div>
+  <aside class="contact-rail" id="kontakt" aria-labelledby="rail-title">
+    <div class="rail-icon" aria-hidden="true">{{ partial "icon.html" "phone" }}</div>
     <h2 id="rail-title">{{ .Params.rail.title }}</h2>
     {{ range .Params.rail.text }}
       <p>{{ . }}</p>
@@ -48,7 +48,7 @@
   </aside>
 </section>
 
-<section class="benefits" aria-label="Najważniejsze korzyści">
+<section class="benefits" id="o-mnie" aria-label="Dlaczego warto">
   {{ range .Params.benefits }}
     <article class="benefit-item">
       <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
@@ -61,7 +61,7 @@
 <section class="offer" id="oferta" aria-labelledby="offer-title">
   <div class="section-heading">
     <p class="eyebrow">Oferta</p>
-    <h2 id="offer-title">Rehabilitacja dopasowana do Pacjenta</h2>
+    <h2 id="offer-title">Rehabilitacja dopasowana do Ciebie</h2>
   </div>
   <div class="service-list">
     {{ range .Params.services }}
@@ -83,9 +83,6 @@
     <p>{{ .Params.manual.summary }}</p>
     <p class="manual-note">{{ .Params.manual.note }}</p>
   </div>
-  <div class="spine-illustration" aria-hidden="true">
-    {{ partial "icon.html" "spine" }}
-  </div>
 </section>
 
 <section class="value-strip" aria-label="Wartości">
@@ -94,10 +91,10 @@
   {{ end }}
 </section>
 
-<section class="contact" id="kontakt" aria-labelledby="contact-title">
+<section class="contact" aria-labelledby="contact-title">
   <div>
     <p class="eyebrow">Kontakt</p>
-    <h2 id="contact-title">Umów wizytę lub zapytaj o szczegóły</h2>
+    <h2 id="contact-title">Umów wizytę już dziś</h2>
   </div>
   <div class="contact-links">
     {{ with .Params.contact.phone }}
