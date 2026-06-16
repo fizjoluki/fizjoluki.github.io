@@ -77,9 +77,11 @@
 </section>
 
 <section class="manual" aria-labelledby="manual-title">
-  <div>
-    <p class="eyebrow">Terapia</p>
-    <h2 id="manual-title">{{ .Params.manual.title }}</h2>
+  <div class="manual-copy">
+    <div class="section-heading">
+      <p class="eyebrow">Terapia</p>
+      <h2 id="manual-title">{{ .Params.manual.title }}</h2>
+    </div>
     <p>{{ .Params.manual.summary }}</p>
     <p class="manual-note">{{ .Params.manual.note }}</p>
   </div>
@@ -95,7 +97,7 @@
 </section>
 
 <section class="contact" id="kontakt" aria-labelledby="contact-title">
-  <div>
+  <div class="section-heading">
     <p class="eyebrow">Kontakt</p>
     <h2 id="contact-title">Umów wizytę lub zapytaj o szczegóły</h2>
   </div>
