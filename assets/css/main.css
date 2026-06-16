@@ -257,6 +257,14 @@ h3 {
   max-width: 35rem;
 }
 
+.hero-quote {
+  color: var(--sage);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  max-width: 35rem;
+}
+
 .actions,
 .contact-links {
   align-items: flex-start;
@@ -374,24 +382,6 @@ h3 {
 .contact-rail p {
   color: rgba(255, 253, 248, 0.76);
   margin-bottom: 0.45rem;
-}
-
-.contact-rail blockquote {
-  border-bottom: 1px solid rgba(255, 247, 232, 0.22);
-  border-top: 1px solid rgba(255, 247, 232, 0.22);
-  color: rgba(255, 253, 248, 0.9);
-  font-size: 0.98rem;
-  font-weight: 760;
-  margin: 0;
-  padding: 1.05rem 0;
-}
-
-.contact-rail blockquote::before {
-  color: var(--cream);
-  content: "“";
-  display: block;
-  font-size: 3.6rem;
-  line-height: 0.55;
 }
 
 .rail-contact {

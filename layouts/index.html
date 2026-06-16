@@ -6,6 +6,9 @@
     <p class="hero-intro">{{ .Params.intro }}</p>
     <div class="section-rule" aria-hidden="true"></div>
     <p class="hero-note">{{ .Params.hero_note }}</p>
+    {{ with .Params.hero_quote }}
+      <p class="hero-quote"><em>&ldquo;{{ . }}&rdquo;</em></p>
+    {{ end }}
     <div class="actions">
       {{ with .Params.primary_action }}
         <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
@@ -32,7 +35,6 @@
     {{ range .Params.rail.text }}
       <p>{{ . }}</p>
     {{ end }}
-    <blockquote>{{ .Params.rail.quote }}</blockquote>
     <ul class="rail-contact" aria-label="Dane kontaktowe">
       {{ with .Params.contact.phone }}
         <li>{{ partial "icon.html" "phone" }} <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">{{ . }}</a></li>
