@@ -18,6 +18,8 @@ The workflow in `.github/workflows/hugo.yaml` builds the site on pushes to `main
 
 In the repository settings on GitHub, set **Pages > Build and deployment > Source** to **GitHub Actions** and set the custom domain to `fizjoluki.pl`. With a custom GitHub Actions workflow, GitHub does not require a `CNAME` file in the repository.
 
+The pinned Hugo version is managed by Renovate across GitHub Actions, Netlify, and the devcontainer files.
+
 ## Netlify deploy previews
 
 `netlify.toml` configures Netlify to build the Hugo site with the same Hugo version used by GitHub Actions. Deploy Preview builds use Netlify's `$DEPLOY_PRIME_URL` as Hugo's `baseURL`, so metadata and absolute links point at the preview URL.

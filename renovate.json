@@ -2,5 +2,33 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Hugo versions in deployment and development automation.",
+      "managerFilePatterns": [
+        "/(^|/)\\.github/workflows/hugo\\.ya?ml$/",
+        "/(^|/)netlify\\.toml$/",
+        "/(^|/)\\.devcontainer/Dockerfile$/",
+        "/(^|/)\\.devcontainer/devcontainer\\.json$/"
+      ],
+      "matchStrings": [
+        "HUGO_VERSION[\"']?\\s*[:=]\\s*[\"']?(?<currentValue>\\d+\\.\\d+\\.\\d+)[\"']?"
+      ],
+      "depNameTemplate": "gohugoio/hugo",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.+)$",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Keep all Hugo version pins in one Renovate PR.",
+      "matchPackageNames": [
+        "gohugoio/hugo"
+      ],
+      "groupName": "Hugo"
+    }
   ]
 }
