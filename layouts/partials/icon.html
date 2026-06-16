@@ -89,4 +89,49 @@
   <path d="M94 141c-8-3-17-2-25 4"/>
   <path d="M98 166c-9-2-18-1-27 3"/>
 </svg>
+{{- else if eq $icon "user" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+  <circle cx="12" cy="7" r="4"/>
+</svg>
+{{- else if eq $icon "users" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <circle cx="9" cy="7" r="4"/>
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+</svg>
+{{- else if eq $icon "credit-card" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="20" height="14" x="2" y="5" rx="2"/>
+  <line x1="2" x2="22" y1="10" y2="10"/>
+</svg>
+{{- else if eq $icon "shield" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+</svg>
+{{- else if eq $icon "smartphone" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+  <path d="M12 18h.01"/>
+</svg>
+{{- else if eq $icon "monitor" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="20" height="14" x="2" y="3" rx="2"/>
+  <line x1="8" x2="16" y1="21" y2="21"/>
+  <line x1="12" x2="12" y1="17" y2="21"/>
+</svg>
+{{- else if eq $icon "key" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/>
+  <circle cx="7.5" cy="15.5" r="5.5"/>
+  <path d="m21 2-9.6 9.6"/>
+  <path d="m15.5 7.5 3 3L22 7l-3-3"/>
+</svg>
+{{- else if eq $icon "trash" -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M3 6h18"/>
+  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+</svg>
 {{- end -}}

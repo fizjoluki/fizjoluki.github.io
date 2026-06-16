@@ -1,59 +1,50 @@
 ---
-title: "Rehabilitacja domowa"
-description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
-headline: "Profesjonalna rehabilitacja domowa"
-tagline: "Fizjo Łuki"
-intro: "Z dojazdem do Pacjenta"
-hero_note: "Indywidualna terapia w Twoim domu, dopasowana do Twoich możliwości i potrzeb."
-hero_photo:
-  src: "https://images.pexels.com/photos/20860583/pexels-photo-20860583.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  alt: "Fizjoterapeuta prowadzi pacjenta przez ćwiczenie rehabilitacyjne."
-  credit_label: "Funkcinės Terapijos Centras / Pexels"
-  credit_url: "https://www.pexels.com/photo/man-exercising-with-physiotherapist-20860583/"
-  license_label: "Licencja Pexels"
-  license_url: "https://www.pexels.com/license/"
-primary_action:
-  label: "Umów wizytę"
-  url: "tel:+48123456789"
-secondary_action:
-  label: "Zobacz ofertę"
-  url: "#oferta"
-benefits:
-  - icon: "home"
-    title: "W Twoim domu"
-    summary: "Oszczędzasz czas i energię - przyjeżdżam do Ciebie."
-  - icon: "brain"
-    title: "Specjalizacja w neurorehabilitacji"
-    summary: "Pracuję z osobami po urazach, zabiegach neurochirurgicznych oraz w chorobach neurologicznych."
-  - icon: "person"
-    title: "Indywidualne podejście"
-    summary: "Każdy plan terapii dopasowuję do Twoich celów, możliwości i codziennego funkcjonowania."
-services:
-  - icon: "brain"
-    title: "Neurorehabilitacja"
-    summary: "Terapia osób po udarach, urazach mózgu, w chorobie Parkinsona, stwardnieniu rozsianym i innych schorzeniach neurologicznych."
-  - icon: "scalpel"
-    title: "Po zabiegach neurochirurgicznych"
-    summary: "Rehabilitacja po operacjach kręgosłupa, guzach mózgu, urazach czaszkowo-mózgowych i innych procedurach neurochirurgicznych."
-  - icon: "senior"
-    title: "Geriatria"
-    summary: "Wsparcie w utrzymaniu sprawności, równowagi i samodzielności osób starszych w bezpiecznym, domowym otoczeniu."
-manual:
-  title: "Terapia manualna i praca z ciałem"
-  summary: "Wykorzystuję techniki terapii manualnej, masażu oraz ćwiczeń, gdy jest to potrzebne i wspiera proces rehabilitacji."
-  note: "Stawiam na jakość terapii i realne efekty - nie na ilość technik."
-rail:
-  title: "Dojazd do Pacjenta"
-  text:
-    - "Obsługuję Jaworzno i okolice."
-    - "Przyjeżdżam z pełnym wyposażeniem, aby terapia w domu była tak samo skuteczna jak w gabinecie."
-  quote: "Najważniejsze jest to, co realnie poprawia Twoją codzienność."
-values:
-  - "Profesjonalizm"
-  - "Uważność"
-  - "Zaufanie"
-contact:
-  phone: "+48 123 456 789"
-  email: "kontakt@fizjoluki.pl"
-  website: "fizjoluki.github.io"
+title: "Security and Authentication"
+description: "Manage your account security settings and two-factor authentication."
+nav:
+  - id: account
+    icon: user
+    label: Your account
+  - id: security
+    icon: shield
+    label: Security
+    active: true
+  - id: teams
+    icon: users
+    label: Teams
+  - id: billing
+    icon: credit-card
+    label: Billing
+two_factor:
+  title: Two-factor authentication
+  options:
+    - id: sms
+      label: Text message (SMS)
+      description: The 6-digit code will be sent to your mobile phone.
+      active: false
+    - id: authenticator
+      label: Authenticator app
+      description: Use a mobile app to get the 6-digit code.
+      active: true
+recovery:
+  title: Recovery codes
+  description: Use recovery codes to access your account if you lose your 2FA device.
+  codes:
+    - 4022-3850
+    - 4920-3022
+    - 9402-2294
+    - 4029-3302
+    - 3920-4492
+    - 4402-3920
+sessions:
+  title: Active sessions
+  items:
+    - device: Macbook Pro
+      icon: monitor
+      location: Warsaw, Poland
+      current: true
+    - device: iPhone 13
+      icon: smartphone
+      location: Warsaw, Poland
+      last_active: 2 mins ago
 ---
