@@ -5,6 +5,7 @@ headline: "Profesjonalna rehabilitacja domowa"
 tagline: "Fizjo Łuki"
 intro: "Z dojazdem do Pacjenta"
 hero_note: "Indywidualna terapia w Twoim domu, dopasowana do Twoich możliwości i potrzeb."
+hero_quote: "Najważniejsze jest to, co realnie poprawia Twoją codzienność."
 hero_photo:
   src: "https://images.pexels.com/photos/20860583/pexels-photo-20860583.jpeg?auto=compress&cs=tinysrgb&w=1200"
   alt: "Fizjoterapeuta prowadzi pacjenta przez ćwiczenie rehabilitacyjne."
@@ -47,7 +48,6 @@ rail:
   text:
     - "Obsługuję Kraków i okolice."
     - "Przyjeżdżam z pełnym wyposażeniem, aby terapia w domu była tak samo skuteczna jak w gabinecie."
-  quote: "Najważniejsze jest to, co realnie poprawia Twoją codzienność."
 values:
   - "Profesjonalizm"
   - "Uważność"
