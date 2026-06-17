@@ -15,7 +15,7 @@ hero_photo:
   license_url: "https://www.pexels.com/license/"
 primary_action:
   label: "Umów wizytę"
-  url: "tel:+48123456789"
+  url: "#kontakt"
 secondary_action:
   label: "Zobacz ofertę"
   url: "#oferta"
