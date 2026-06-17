@@ -42,9 +42,6 @@
       {{ with .Params.contact.email }}
         <li>{{ partial "icon.html" "mail" }} <a href="mailto:{{ . }}">{{ . }}</a></li>
       {{ end }}
-      {{ with .Params.contact.website }}
-        <li>{{ partial "icon.html" "globe" }} <span>{{ . }}</span></li>
-      {{ end }}
     </ul>
     <img class="rail-logo" src="{{ "logo.png" | relURL }}" width="164" height="106" alt="{{ site.Title }}">
   </aside>
