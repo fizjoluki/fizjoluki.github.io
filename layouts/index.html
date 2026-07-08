@@ -1,50 +1,51 @@
 {{ define "main" }}
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <p class="eyebrow">{{ .Params.tagline }}</p>
-    <h1 id="hero-title">{{ .Params.headline }}</h1>
-    <p class="hero-intro">{{ .Params.intro }}</p>
-    <div class="section-rule" aria-hidden="true"></div>
-    <p class="hero-note">{{ .Params.hero_note }}</p>
-    {{ with .Params.hero_quote }}
-      <p class="hero-quote"><em>&ldquo;{{ . }}&rdquo;</em></p>
-    {{ end }}
-    <div class="actions">
-      {{ with .Params.primary_action }}
-        <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
-      {{ end }}
-      {{ with .Params.secondary_action }}
-        <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
-      {{ end }}
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1 id="hero-title">
+        <span>{{ .Params.headline }}</span>
+        <span class="hero-title-accent">{{ .Params.headline_accent }}</span>
+      </h1>
+      <p class="hero-location">{{ .Params.location }}</p>
+      <div class="actions">
+        {{ with .Params.primary_action }}
+          <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
+        {{ end }}
+        {{ with .Params.secondary_action }}
+          <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
+        {{ end }}
+      </div>
     </div>
   </div>
 
-  <figure class="hero-visual">
-    {{ with .Params.hero_photo }}
-      <img src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
-      <figcaption>
-        Zdjęcie poglądowe: <a href="{{ .credit_url | safeURL }}">{{ .credit_label }}</a>.
-        <a href="{{ .license_url | safeURL }}">{{ .license_label }}</a>.
-      </figcaption>
+  {{ with .Params.hero_photo }}
+    {{ with resources.Get .src }}
+      {{ $hero := .Process "webp q86" }}
+      {{ $heroSmall := .Resize "960x webp q84" }}
+      <div class="hero-media">
+        <img
+          src="{{ $hero.RelPermalink }}"
+          srcset="{{ $heroSmall.RelPermalink }} 960w, {{ $hero.RelPermalink }} {{ $hero.Width }}w"
+          sizes="100vw"
+          width="{{ $hero.Width }}"
+          height="{{ $hero.Height }}"
+          alt="{{ $.Params.hero_photo.alt }}"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high">
+      </div>
     {{ end }}
-  </figure>
+  {{ end }}
+</section>
 
-  <aside class="contact-rail" id="dojazd" aria-labelledby="rail-title">
-    <div class="rail-icon" aria-hidden="true">{{ partial "icon.html" "car" }}</div>
+<section class="travel" id="dojazd" aria-labelledby="rail-title">
+  <div class="travel-icon" aria-hidden="true">{{ partial "icon.html" "car" }}</div>
+  <div>
     <h2 id="rail-title">{{ .Params.rail.title }}</h2>
     {{ range .Params.rail.text }}
       <p>{{ . }}</p>
     {{ end }}
-    <ul class="rail-contact" aria-label="Dane kontaktowe">
-      {{ with .Params.contact.phone }}
-        <li>{{ partial "icon.html" "phone" }} <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">{{ . }}</a></li>
-      {{ end }}
-      {{ with .Params.contact.email }}
-        <li>{{ partial "icon.html" "mail" }} <a href="mailto:{{ . }}">{{ . }}</a></li>
-      {{ end }}
-    </ul>
-    <img class="rail-logo" src="{{ "logo.png" | relURL }}" width="164" height="106" alt="{{ site.Title }}">
-  </aside>
+  </div>
 </section>
 
 <section class="benefits" aria-label="Najważniejsze korzyści">
