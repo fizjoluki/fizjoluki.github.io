@@ -665,23 +665,20 @@ h3 {
 
   .hero {
     background: var(--surface-soft);
-    display: grid;
-    grid-template-areas:
-      "copy"
-      "media";
-    min-height: auto;
-    overflow: visible;
+    display: block;
+    min-height: 38rem;
+    min-height: clamp(38rem, calc(100svh - var(--header-height)), 46rem);
+    overflow: hidden;
   }
 
   .hero-inner {
-    grid-area: copy;
-    min-height: auto;
-    padding: clamp(1.4rem, 5vw, 2.25rem) 0;
+    min-height: inherit;
+    padding: clamp(2rem, 7vw, 3.25rem) 0;
     width: min(calc(100% - 1rem), var(--content));
   }
 
   .hero-copy {
-    max-width: none;
+    max-width: min(100%, 23rem);
     padding: 0;
     width: 100%;
   }
@@ -696,16 +693,12 @@ h3 {
   }
 
   .hero-media {
-    aspect-ratio: 4 / 3;
-    grid-area: media;
-    inset: auto;
-    position: relative;
+    inset: 0;
+    position: absolute;
   }
 
   .hero-media img {
-    inset: 0;
-    object-position: 62% center;
-    position: absolute;
+    object-position: 38% center;
   }
 
   .service-item {
