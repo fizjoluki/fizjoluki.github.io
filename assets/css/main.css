@@ -19,7 +19,7 @@
   --cream: #f6f5f4;
   --on-deep: #ffffff;
   --shadow: 0 16px 36px rgba(27, 54, 93, 0.12);
-  --header-height: 5.25rem;
+  --header-height: clamp(4.2rem, 8vw, 5.25rem);
   --content: 1120px;
 }
 
@@ -121,7 +121,7 @@ svg {
 .site-nav {
   align-items: center;
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 2.5vw, 1.5rem);
   justify-content: space-between;
   min-height: calc(var(--header-height) - 0.35rem);
   padding: 0.45rem 0;
@@ -136,26 +136,29 @@ svg {
 
 .brand img {
   height: auto;
-  width: 7.7rem;
+  width: clamp(3.8rem, 9vw, 7.5rem);
 }
 
 .nav-links {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+  flex-wrap: nowrap;
+  gap: clamp(0.3rem, 1vw, 0.45rem);
   justify-content: flex-end;
 }
 
 .nav-links a {
+  align-items: center;
   border-radius: 4px;
   color: var(--ink);
-  font-size: 0.82rem;
+  display: inline-flex;
+  font-size: clamp(0.78rem, 1.8vw, 0.95rem);
   font-weight: 760;
-  min-height: 2.5rem;
-  padding: 0.55rem 0.75rem;
+  min-height: clamp(2.5rem, 5vw, 2.85rem);
+  padding: clamp(0.45rem, 1vw, 0.65rem) clamp(0.5rem, 2vw, 1.1rem);
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -167,8 +170,8 @@ svg {
 .nav-links a:last-child {
   background: var(--ink);
   color: var(--on-deep);
-  padding-left: 0.95rem;
-  padding-right: 0.95rem;
+  padding-left: clamp(0.65rem, 2.5vw, 1.3rem);
+  padding-right: clamp(0.65rem, 2.5vw, 1.3rem);
 }
 
 main {
@@ -627,10 +630,6 @@ h3 {
 }
 
 @media (max-width: 760px) {
-  :root {
-    --header-height: 6.75rem;
-  }
-
   .site-nav,
   .site-footer,
   .travel,
@@ -638,37 +637,6 @@ h3 {
   .manual,
   .not-found {
     width: min(calc(100% - 1rem), var(--content));
-  }
-
-  .site-nav {
-    align-items: flex-start;
-    display: grid;
-    gap: 0.35rem;
-    justify-items: start;
-    min-height: auto;
-    padding: 0.55rem 0 0.65rem;
-  }
-
-  .brand img {
-    width: 6.9rem;
-  }
-
-  .nav-links {
-    gap: 0.35rem;
-    justify-content: flex-start;
-  }
-
-  .nav-links a {
-    align-items: center;
-    display: inline-flex;
-    font-size: 0.78rem;
-    min-height: 2.75rem;
-    padding: 0.45rem 0.55rem;
-  }
-
-  .nav-links a:last-child {
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
   }
 
   .hero {
@@ -723,9 +691,6 @@ h3 {
 }
 
 @media (max-width: 460px) {
-  :root {
-    --header-height: 7.7rem;
-  }
 
   h1 {
     font-size: 2.45rem;
