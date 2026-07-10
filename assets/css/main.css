@@ -213,7 +213,8 @@ main > section[id] {
 .hero-media img {
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* przesuwamy punkt ogniskowania nieco w górę, żeby nie zostawiać dużej pustej przestrzeni nad głową */
+  object-position: 48% 32%;
   width: 100%;
 }
 
@@ -232,6 +233,10 @@ main > section[id] {
 .hero-copy {
   font-size: var(--hero-scale);
   max-width: min(30rem, 42vw);
+  /* jasne odstępy pomiędzy tytułem, lokalizacją i przyciskami */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .eyebrow {
@@ -314,16 +319,17 @@ h3 {
 .hero .actions {
   align-items: stretch;
   flex-direction: column;
-  gap: 0.65em;
-  width: min(14em, 100%);
+  gap: 1rem;
+  width: min(16em, 100%);
 }
 
 .hero .button {
   border-radius: 0.25em;
-  font-size: 1.5em;
+  /* nieco mniejsze wrażenie przycisków na hero, żeby nie przytłaczały */
+  font-size: 1.12em;
   line-height: 1.25;
-  min-height: max(3rem, 2.35em);
-  padding: 0.55em 0.85em;
+  min-height: max(3rem, 2.15em);
+  padding: 0.5em 0.85em;
   width: 100%;
 }
 
@@ -708,7 +714,23 @@ h3 {
   }
 
   .hero-media img {
-    object-position: 38% center;
+    /* na tabletach/małych ekranach dopasowujemy punkt ogniskowania tak,
+       żeby sylwetka z torbą i część maski samochodu były widoczne */
+    object-position: 42% 40%;
+  }
+
+  /* Dostosowanie przycisków i układu w hero na mniejszych szerokościach */
+  .hero .actions {
+    flex-direction: row;
+    gap: 0.6rem;
+    width: auto;
+  }
+
+  .hero .button {
+    width: auto;
+    font-size: 1rem;
+    padding: 0.45rem 0.8rem;
+    min-width: 8rem;
   }
 
   .service-item {
@@ -736,9 +758,18 @@ h3 {
     width: 100%;
   }
 
-  .button,
-  .contact-links a {
-    width: 100%;
+  /* Małe telefony: przyciski w hero mogą być mniejsze ale nie muszą zajmować 100% szerokości
+     dzięki temu nie będą się tak ściśnięte na zdjęciu */
+  .hero .button {
+    width: auto;
+    font-size: 0.98rem;
+    padding: 0.45rem 0.75rem;
+    min-width: 7.2rem;
+  }
+
+  /* Drobne przesunięcie punktu ogniskowania dla bardzo małych ekranów */
+  .hero-media img {
+    object-position: 38% 48%;
   }
 
   .service-item {
