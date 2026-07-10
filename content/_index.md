@@ -21,7 +21,7 @@ services:
     summary: "Kompleksowa terapia pacjentów po udarach mózgu, urazach czaszkowo-mózgowych, z chorobą Parkinsona, stwardnieniem rozsianym (SM) oraz innymi schorzeniami układu nerwowego. Celem jest odbudowa utraconych funkcji i poprawa samodzielności."
   - icon: "scalpel"
     title: "Rehabilitacja pooperacyjna"
-    summary: "Rehabilitacja po zabiegach neurochirurgicznych i ortopedycznych, w tym po operacjach kręgosłupa (dyskopatie, stabilizacje), stawów obwodowych oraz innych zabiegach rekonstrukcyjnych. Pomagam bezpiecznie wrócić do pełnej sprawności."
+    summary: "Rehabilitacja po zabiegach neurochirurgicznych i ortopedycznych, w tym po operacjach kręgosłupa (dyskopatie, stabilizacje), stawów obwodowych oraz innych zabiegach rekonstrukcyjnych. Wspieram bezpieczny powrót do możliwie najlepszej sprawności i samodzielności."
   - icon: "spine"
     title: "Masaż"
     summary: "Masaż leczniczy, tkanek głębokich oraz techniki powięziowe dostosowane do indywidualnych potrzeb. Pomaga w redukcji napięcia mięśniowego, łagodzeniu przewlekłego bólu oraz przyspieszeniu regeneracji organizmu."

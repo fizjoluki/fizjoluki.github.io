@@ -105,9 +105,10 @@
             src="{{ $mapImage.RelPermalink }}" 
             width="{{ $mapImage.Width }}" 
             height="{{ $mapImage.Height }}" 
-            alt="{{ $.Params.pricing.map_photo.alt }}" 
-            class="pricing-map-img" 
-            loading="lazy">
+            alt="{{ $.Params.pricing.map_photo.alt }}"
+            class="pricing-map-img"
+            loading="lazy"
+            decoding="async">
         {{ end }}
       {{ end }}
     </div>
@@ -124,9 +125,10 @@
             src="{{ $profileImage.RelPermalink }}" 
             width="{{ $profileImage.Width }}" 
             height="{{ $profileImage.Height }}" 
-            alt="{{ $.Params.about.photo.alt }}" 
-            class="about-photo" 
-            loading="lazy">
+            alt="{{ $.Params.about.photo.alt }}"
+            class="about-photo"
+            loading="lazy"
+            decoding="async">
         {{ end }}
       {{ end }}
     </div>

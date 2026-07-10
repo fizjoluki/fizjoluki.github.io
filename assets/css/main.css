@@ -570,7 +570,7 @@ h3 {
   align-items: center;
   align-content: center;
   grid-template-columns: 1fr;
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
 }
 
 .contact h2 {
