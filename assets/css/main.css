@@ -30,7 +30,6 @@
 html {
   background: var(--paper);
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 1.2rem);
 }
 
 body {
@@ -149,6 +148,7 @@ svg {
 
 .nav-links a {
   align-items: center;
+  border: 1px solid transparent;
   border-radius: 4px;
   color: var(--ink);
   display: inline-flex;
@@ -159,19 +159,29 @@ svg {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
   background: var(--accent-soft);
+  border-color: rgba(132, 120, 111, 0.3);
   color: var(--ink-deep);
 }
 
 .nav-links a:last-child {
   background: var(--ink);
+  border-color: var(--ink);
   color: var(--on-deep);
   padding-left: clamp(0.65rem, 2.5vw, 1.3rem);
   padding-right: clamp(0.65rem, 2.5vw, 1.3rem);
+}
+
+.nav-links a:last-child:hover,
+.nav-links a:last-child:focus-visible {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--on-deep);
 }
 
 main {
@@ -179,7 +189,7 @@ main {
 }
 
 main > section[id] {
-  scroll-margin-top: calc(var(--header-height) + 1.2rem);
+  scroll-margin-top: calc(var(--header-height) - 2px);
 }
 
 .hero {
@@ -558,7 +568,9 @@ h3 {
 
 .contact {
   align-items: center;
+  align-content: center;
   grid-template-columns: 1fr;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .contact h2 {
@@ -630,11 +642,32 @@ h3 {
 }
 
 @media (max-width: 760px) {
-  .site-nav,
+  :root {
+    --header-height: 7.25rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 0;
+    width: min(calc(100% - 1rem), var(--content));
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.65rem;
+    min-height: 2.2rem;
+  }
+
   .site-footer,
-  .travel,
-  .benefits,
-  .manual,
   .not-found {
     width: min(calc(100% - 1rem), var(--content));
   }
@@ -706,19 +739,286 @@ h3 {
     width: 100%;
   }
 
-  .travel,
-  .benefit-item,
   .service-item {
     padding: 1rem;
   }
+}
 
-  .travel {
-    align-items: start;
-    grid-template-columns: 2.8rem minmax(0, 1fr);
-  }
+/* ==========================================================================
+   Niezależne Style dla Nowych Sekcji (Hero Travel, Cennik, O mnie)
+   ========================================================================== */
 
-  .travel-icon {
-    height: 2.8rem;
-    width: 2.8rem;
+/* Hero Travel Info Integration */
+.hero-travel-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.hero-travel-bar-inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(var(--content), calc(100% - 2rem));
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--surface-soft);
+  border: 2px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 1.25rem 1.75rem;
+}
+
+.hero-travel-icon {
+  color: var(--ink);
+  flex: 0 0 auto;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.hero-travel-bar-inner p {
+  color: var(--ink-deep);
+  font-size: 1.08rem;
+  font-weight: 760;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 460px) {
+  .hero-travel-bar-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+    gap: 0.75rem;
   }
+}
+
+/* Cennik Section */
+.pricing-section {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding:
+    clamp(2.3rem, 5vw, 4.8rem)
+    max(1rem, calc((100% - var(--content)) / 2))
+    clamp(2.3rem, 5vw, 4.8rem);
+}
+
+.pricing-container {
+  display: grid;
+  gap: clamp(1.6rem, 4vw, 3.4rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 761px) {
+  .pricing-container {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.pricing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+.pricing-zones {
+  display: grid;
+  gap: 1rem;
+}
+
+.zone-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.15rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zone-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(27, 54, 93, 0.05);
+}
+
+.zone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.zone-name {
+  font-weight: 780;
+  color: var(--ink-deep);
+  font-size: 1.05rem;
+}
+
+.zone-price {
+  background: var(--ink);
+  color: var(--on-deep);
+  font-weight: 800;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.zone-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pricing-extra-card {
+  align-items: center;
+  background: var(--accent-soft);
+  border: 1px solid rgba(132, 120, 111, 0.25);
+  border-radius: 6px;
+  display: flex;
+  gap: 1rem;
+  padding: 1.15rem;
+}
+
+.extra-icon {
+  color: var(--accent-deep);
+  flex: 0 0 auto;
+  height: 2rem;
+  width: 2rem;
+}
+
+.extra-text {
+  color: var(--ink-deep);
+  font-weight: 760;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.pricing-map {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
+.pricing-map-img {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* O mnie Section */
+.about-section {
+  background: var(--paper-strong);
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  padding:
+    clamp(2.3rem, 5vw, 4.8rem)
+    max(1rem, calc((100% - var(--content)) / 2))
+    clamp(2.3rem, 5vw, 4.8rem);
+}
+
+.about-container {
+  display: grid;
+  gap: clamp(1.6rem, 4vw, 3.4rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 761px) {
+  .about-container {
+    grid-template-columns: 0.75fr 1.25fr;
+  }
+}
+
+.about-media {
+  align-self: start;
+  justify-self: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+.about-photo {
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-bio {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-lists {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .about-lists {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-list-group h3 {
+  color: var(--ink-deep);
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-list-group ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.about-list-group li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Styles Tweaks */
+.contact-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-desc {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 36rem;
+  margin-bottom: 0;
 }
