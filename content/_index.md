@@ -1,18 +1,12 @@
 ---
-title: "Rehabilitacja domowa"
-description: "Profesjonalna rehabilitacja domowa z dojazdem do Pacjenta."
-headline: "Profesjonalna rehabilitacja domowa"
-tagline: "Fizjo Łuki"
-intro: "Z dojazdem do Pacjenta"
-hero_note: "Indywidualna terapia w Twoim domu, dopasowana do Twoich możliwości i potrzeb."
-hero_quote: "Najważniejsze jest to, co realnie poprawia Twoją codzienność."
+title: "Fizjoterapia z dojazdem"
+description: "Fizjoterapia z dojazdem w Krakowie i okolicach, dopasowana do potrzeb Pacjenta."
+headline: "Fizjoterapia"
+headline_accent: "z dojazdem"
+location: "Kraków i okolice"
 hero_photo:
-  src: "https://images.pexels.com/photos/20860583/pexels-photo-20860583.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  alt: "Fizjoterapeuta prowadzi pacjenta przez ćwiczenie rehabilitacyjne."
-  credit_label: "Funkcinės Terapijos Centras / Pexels"
-  credit_url: "https://www.pexels.com/photo/man-exercising-with-physiotherapist-20860583/"
-  license_label: "Licencja Pexels"
-  license_url: "https://www.pexels.com/license/"
+  src: "images/hero-v2.png"
+  alt: "Fizjoterapeuta z torbą terapeutyczną podczas wizyty domowej."
 primary_action:
   label: "Umów wizytę"
   url: "#kontakt"
@@ -46,8 +40,7 @@ manual:
 rail:
   title: "Dojazd do Pacjenta"
   text:
-    - "Obsługuję Kraków i okolice."
-    - "Przyjeżdżam z pełnym wyposażeniem, aby terapia w domu była tak samo skuteczna jak w gabinecie."
+    - "Przyjeżdżam z potrzebnym wyposażeniem, aby terapia mogła odbywać się komfortowo w domowym otoczeniu."
 values:
   - "Profesjonalizm"
   - "Uważność"

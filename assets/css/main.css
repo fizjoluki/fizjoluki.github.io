@@ -109,7 +109,7 @@ svg {
 
 .site-nav,
 .site-footer,
-.hero,
+.travel,
 .benefits,
 .manual,
 .not-found {
@@ -183,20 +183,45 @@ main > section[id] {
 }
 
 .hero {
-  display: grid;
-  gap: clamp(1.2rem, 2.7vw, 2rem);
-  grid-template-areas:
-    "copy"
-    "visual"
-    "rail";
-  grid-template-columns: 1fr;
-  padding: clamp(1.3rem, 3.6vw, 3.2rem) 0 clamp(2rem, 4vw, 3.6rem);
+  --hero-scale: clamp(0.72rem, calc(0.45rem + 1vw), 1.19rem);
+
+  background: var(--paper-strong);
+  isolation: isolate;
+  min-height: 34rem;
+  min-height: clamp(34rem, calc(100svh - var(--header-height)), 50rem);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.hero-media {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-media img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.hero-inner {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: inherit;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  position: relative;
+  width: min(var(--content), calc(100% - 2rem));
+  z-index: 2;
 }
 
 .hero-copy {
-  align-self: center;
-  grid-area: copy;
-  padding: clamp(0.5rem, 2vw, 1.3rem) 0;
+  font-size: var(--hero-scale);
+  max-width: min(30rem, 42vw);
 }
 
 .eyebrow {
@@ -241,33 +266,30 @@ h3 {
   text-transform: uppercase;
 }
 
-.hero-intro {
+.hero h1 {
+  font-size: 4.38em;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero-title-accent {
   color: var(--accent-deep);
-  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  font-size: 0.94em;
+}
+
+.hero-location {
+  color: var(--ink);
+  font-size: 1.6em;
   font-weight: 780;
-  line-height: 1.18;
-  margin-bottom: 0.35rem;
-}
-
-.section-rule {
-  background: var(--taupe);
-  height: 3px;
-  margin: 1.45rem 0 1.35rem;
-  width: 4.5rem;
-}
-
-.hero-note {
-  color: var(--ink-soft);
-  font-size: 1.05rem;
-  max-width: 35rem;
-}
-
-.hero-quote {
-  color: var(--accent-deep);
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-top: 1rem;
-  max-width: 35rem;
+  letter-spacing: 0.055em;
+  margin: clamp(1.25rem, 3vw, 1.8rem) 0 0;
+  text-transform: uppercase;
 }
 
 .actions,
@@ -277,6 +299,22 @@ h3 {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1.45rem;
+}
+
+.hero .actions {
+  align-items: stretch;
+  flex-direction: column;
+  gap: 0.65em;
+  width: min(14em, 100%);
+}
+
+.hero .button {
+  border-radius: 0.25em;
+  font-size: 1.5em;
+  line-height: 1.25;
+  min-height: max(3rem, 2.35em);
+  padding: 0.55em 0.85em;
+  width: 100%;
 }
 
 .button {
@@ -319,112 +357,50 @@ h3 {
   color: var(--accent-deep);
 }
 
-.hero-visual {
-  align-self: stretch;
-  background: var(--paper-strong);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  grid-area: visual;
-  margin: 0;
-  min-height: 21rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero-visual img {
-  height: 100%;
-  min-height: 21rem;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-}
-
-.hero-visual figcaption {
-  background: rgba(27, 54, 93, 0.86);
-  border-radius: 4px;
-  bottom: 0.9rem;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.72rem;
-  left: 0.9rem;
-  line-height: 1.35;
-  margin: 0;
-  max-width: calc(100% - 1.8rem);
-  padding: 0.45rem 0.6rem;
-  position: absolute;
-}
-
-.hero-visual figcaption a {
-  color: inherit;
-}
-
-.contact-rail {
-  align-self: stretch;
+.travel {
+  align-items: center;
   background: var(--ink);
   border-radius: 8px;
   color: rgba(255, 255, 255, 0.84);
   display: grid;
-  gap: 1.2rem;
-  grid-area: rail;
-  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  grid-template-columns: 3.4rem minmax(0, 1fr);
+  margin-bottom: clamp(1.6rem, 4vw, 3rem);
+  margin-top: clamp(1rem, 2.5vw, 2rem);
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
-.rail-icon {
+.travel-icon {
   color: var(--cream);
   height: 3.4rem;
   width: 3.4rem;
 }
 
-.contact-rail h2 {
+.travel h2 {
   color: var(--on-deep);
-  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.15rem, 2.1vw, 1.55rem);
   line-height: 1.13;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.45rem;
   text-transform: uppercase;
 }
 
-.contact-rail p {
+.travel p {
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0;
+  max-width: 58rem;
 }
 
-.rail-contact {
-  display: grid;
-  gap: 0.7rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.rail-contact li,
 .contact-links a {
   align-items: center;
   display: flex;
   gap: 0.55rem;
 }
 
-.rail-contact svg,
 .contact-links svg {
   flex: 0 0 auto;
   height: 1.2rem;
   width: 1.2rem;
-}
-
-.rail-contact a {
-  text-decoration: none;
-}
-
-.rail-contact a:hover,
-.rail-contact a:focus-visible {
-  color: var(--cream);
-}
-
-.rail-logo {
-  align-self: end;
-  filter: brightness(0) invert(1) opacity(0.88);
-  height: auto;
-  width: 6.8rem;
 }
 
 .benefits {
@@ -626,23 +602,7 @@ h3 {
   padding: 6rem 0;
 }
 
-@media (min-width: 760px) {
-  .hero {
-    grid-template-areas:
-      "copy visual"
-      "rail rail";
-    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.82fr);
-  }
-
-  .hero-visual {
-    min-height: 29rem;
-  }
-
-  .hero-visual img {
-    min-height: 29rem;
-  }
-
-
+@media (min-width: 761px) {
   .benefits {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -669,20 +629,10 @@ h3 {
   }
 }
 
-@media (min-width: 1020px) {
-  .hero {
-    grid-template-areas:
-      "copy visual"
-      "rail visual";
-    grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.85fr);
-  }
-
-}
-
 @media (max-width: 760px) {
   .site-nav,
   .site-footer,
-  .hero,
+  .travel,
   .benefits,
   .manual,
   .not-found {
@@ -690,16 +640,40 @@ h3 {
   }
 
   .hero {
-    padding-top: 1rem;
+    background: var(--surface-soft);
+    display: block;
+    min-height: 38rem;
+    min-height: clamp(38rem, calc(100svh - var(--header-height)), 46rem);
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    min-height: inherit;
+    padding: clamp(2rem, 7vw, 3.25rem) 0;
+    width: min(calc(100% - 1rem), var(--content));
   }
 
   .hero-copy {
+    max-width: min(100%, 23rem);
     padding: 0;
+    width: 100%;
   }
 
-  .hero-visual,
-  .hero-visual img {
-    min-height: 22rem;
+  .hero h1 {
+    max-width: 12ch;
+  }
+
+  .hero-location {
+    margin-top: 1.15rem;
+  }
+
+  .hero-media {
+    inset: 0;
+    position: absolute;
+  }
+
+  .hero-media img {
+    object-position: 38% center;
   }
 
   .service-item {
@@ -732,20 +706,19 @@ h3 {
     width: 100%;
   }
 
-  .hero-visual,
-  .hero-visual img {
-    min-height: 18.5rem;
-  }
-
-  .hero-visual figcaption {
-    bottom: 0.65rem;
-    left: 0.65rem;
-    max-width: calc(100% - 1.3rem);
-  }
-
-  .contact-rail,
+  .travel,
   .benefit-item,
   .service-item {
     padding: 1rem;
+  }
+
+  .travel {
+    align-items: start;
+    grid-template-columns: 2.8rem minmax(0, 1fr);
+  }
+
+  .travel-icon {
+    height: 2.8rem;
+    width: 2.8rem;
   }
 }
