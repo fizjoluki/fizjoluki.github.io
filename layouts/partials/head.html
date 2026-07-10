@@ -16,3 +16,15 @@
   {{ $styles := . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 {{ end }}
+
+<!-- Inline override to ensure hero image is cropped as intended (higher priority than cached CSS) -->
+<style>
+  .hero { min-height: 30rem; }
+  .hero-media img { object-position: 48% 80% !important; }
+  @media (max-width: 760px) {
+    .hero-media img { object-position: 48% 78% !important; }
+  }
+  @media (max-width: 460px) {
+    .hero-media img { object-position: 48% 86% !important; }
+  }
+</style>
