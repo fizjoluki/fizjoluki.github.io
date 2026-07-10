@@ -642,29 +642,31 @@ h3 {
 }
 
 @media (max-width: 760px) {
-  :root {
-    --header-height: 7.25rem;
-  }
-
   .site-nav {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.75rem 0;
+    gap: 0.4rem;
+    padding: 0.45rem 0;
     width: min(calc(100% - 1rem), var(--content));
   }
   
   .nav-links {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.3rem;
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: clamp(0.15rem, 0.8vw, 0.35rem);
   }
   
   .nav-links a {
-    font-size: 0.78rem;
-    padding: 0.4rem 0.65rem;
+    font-size: clamp(0.68rem, 1.6vw, 0.82rem);
+    padding: 0.35rem clamp(0.35rem, 1.2vw, 0.75rem);
     min-height: 2.2rem;
+  }
+
+  .nav-links a:last-child {
+    padding-left: clamp(0.45rem, 1.8vw, 0.9rem);
+    padding-right: clamp(0.45rem, 1.8vw, 0.9rem);
   }
 
   .site-footer,
