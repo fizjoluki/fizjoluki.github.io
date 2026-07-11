@@ -257,7 +257,7 @@ a {
 
 main {
   display: block;
-  overflow: clip;
+  overflow-x: clip;
 }
 
 main > section[id] {

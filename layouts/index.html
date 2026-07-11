@@ -107,11 +107,12 @@
       {{ with .Params.pricing.map_photo }}
         {{ with resources.Get .src }}
           {{ $mapImage := .Resize "960x webp q88" }}
-          {{ $mapSmall := .Resize "560x webp q84" }}
+          {{ $mapSmall := .Resize "480x webp q84" }}
+          {{ $mapMedium := .Resize "640x webp q86" }}
           <img 
             src="{{ $mapImage.RelPermalink }}" 
-            srcset="{{ $mapSmall.RelPermalink }} 560w, {{ $mapImage.RelPermalink }} 960w"
-            sizes="(min-width: 960px) 40vw, 100vw"
+            srcset="{{ $mapSmall.RelPermalink }} 480w, {{ $mapMedium.RelPermalink }} 640w, {{ $mapImage.RelPermalink }} 960w"
+            sizes="(min-width: 960px) min(40vw, 36rem), 100vw"
             width="{{ $mapImage.Width }}" 
             height="{{ $mapImage.Height }}" 
             alt="{{ $.Params.pricing.map_photo.alt }}"
@@ -134,7 +135,7 @@
           <img 
             src="{{ $profileImage.RelPermalink }}" 
             srcset="{{ $profileSmall.RelPermalink }} 480w, {{ $profileImage.RelPermalink }} 720w"
-            sizes="(min-width: 760px) 38vw, 100vw"
+            sizes="(min-width: 760px) min(32vw, 26.25rem), 100vw"
             width="{{ $profileImage.Width }}" 
             height="{{ $profileImage.Height }}" 
             alt="{{ $.Params.about.photo.alt }}"
