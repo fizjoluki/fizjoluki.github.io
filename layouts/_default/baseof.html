@@ -10,11 +10,18 @@
         <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} strona główna">
           <img src="{{ "logo.png" | relURL }}" width="164" height="106" alt="{{ site.Title }}">
         </a>
-        <div class="nav-links">
-          <a href="{{ "#oferta" | relURL }}">Oferta</a>
-          <a href="{{ "#cennik" | relURL }}">Cennik</a>
-          <a href="{{ "#o-mnie" | relURL }}">O mnie</a>
-          <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
+        <div class="nav-menu">
+          <input class="nav-toggle" type="checkbox" id="nav-toggle">
+          <label class="nav-menu-trigger" for="nav-toggle">
+            <span>Menu</span>
+            <span class="menu-icon" aria-hidden="true"></span>
+          </label>
+          <div class="nav-links">
+            <a href="{{ "#oferta" | relURL }}">Oferta</a>
+            <a href="{{ "#cennik" | relURL }}">Cennik</a>
+            <a href="{{ "#o-mnie" | relURL }}">O mnie</a>
+            <a href="{{ "#kontakt" | relURL }}">Kontakt</a>
+          </div>
         </div>
       </nav>
     </header>

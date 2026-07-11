@@ -1,12 +1,14 @@
 {{ define "main" }}
 <section class="hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero-inner">
+  <div class="hero-inner page-shell">
     <div class="hero-copy">
+      <p class="eyebrow">Rehabilitacja domowa</p>
       <h1 id="hero-title">
         <span>{{ .Params.headline }}</span>
         <span class="hero-title-accent">{{ .Params.headline_accent }}</span>
       </h1>
       <p class="hero-location">{{ .Params.location }}</p>
+      <p class="hero-lead">{{ .Params.description }}</p>
       
       <div class="actions">
         {{ with .Params.primary_action }}
@@ -17,30 +19,31 @@
         {{ end }}
       </div>
     </div>
-  </div>
 
-  {{ with .Params.hero_photo }}
-    {{ with resources.Get .src }}
-      {{ $hero := .Process "webp q86" }}
-      {{ $heroSmall := .Resize "960x webp q84" }}
-      <div class="hero-media">
-        <img
-          src="{{ $hero.RelPermalink }}"
-          srcset="{{ $heroSmall.RelPermalink }} 960w, {{ $hero.RelPermalink }} {{ $hero.Width }}w"
-          sizes="100vw"
-          width="{{ $hero.Width }}"
-          height="{{ $hero.Height }}"
-          alt="{{ $.Params.hero_photo.alt }}"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high">
-      </div>
+    {{ with .Params.hero_photo }}
+      {{ with resources.Get .src }}
+        {{ $hero := .Resize "1440x webp q86" }}
+        {{ $heroSmall := .Resize "640x webp q82" }}
+        {{ $heroMedium := .Resize "960x webp q84" }}
+        <div class="hero-media">
+          <img
+            src="{{ $hero.RelPermalink }}"
+            srcset="{{ $heroSmall.RelPermalink }} 640w, {{ $heroMedium.RelPermalink }} 960w, {{ $hero.RelPermalink }} 1440w"
+            sizes="(min-width: 760px) 55vw, 100vw"
+            width="{{ $hero.Width }}"
+            height="{{ $hero.Height }}"
+            alt="{{ $.Params.hero_photo.alt }}"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
+        </div>
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </div>
 
   {{ with .Params.travel_info }}
     <div class="hero-travel-bar">
-      <div class="hero-travel-bar-inner">
+      <div class="hero-travel-bar-inner page-shell">
         <div class="hero-travel-icon" aria-hidden="true">
           {{ partial "icon.html" "car" }}
         </div>
@@ -52,7 +55,9 @@
 
 <section class="offer" id="oferta" aria-labelledby="offer-title">
   <div class="section-heading">
+    <p class="eyebrow">Zakres wsparcia</p>
     <h2 id="offer-title">Rehabilitacja dopasowana do Ciebie</h2>
+    <p class="section-intro">Plan terapii ustalam indywidualnie, z uwzględnieniem aktualnych możliwości, zaleceń medycznych i warunków domowych.</p>
   </div>
   <div class="service-list">
     {{ range .Params.services }}
@@ -71,6 +76,7 @@
   <div class="pricing-container">
     <div class="pricing-info">
       <div class="section-heading">
+        <p class="eyebrow">Jasne zasady dojazdu</p>
         <h2 id="pricing-title">{{ .Params.pricing.title }}</h2>
         <p class="section-subtitle">{{ .Params.pricing.subtitle }}</p>
       </div>
@@ -100,9 +106,12 @@
     <div class="pricing-map">
       {{ with .Params.pricing.map_photo }}
         {{ with resources.Get .src }}
-          {{ $mapImage := .Process "webp q90" }}
+          {{ $mapImage := .Resize "960x webp q88" }}
+          {{ $mapSmall := .Resize "560x webp q84" }}
           <img 
             src="{{ $mapImage.RelPermalink }}" 
+            srcset="{{ $mapSmall.RelPermalink }} 560w, {{ $mapImage.RelPermalink }} 960w"
+            sizes="(min-width: 960px) 40vw, 100vw"
             width="{{ $mapImage.Width }}" 
             height="{{ $mapImage.Height }}" 
             alt="{{ $.Params.pricing.map_photo.alt }}"
@@ -120,9 +129,12 @@
     <div class="about-media">
       {{ with .Params.about.photo }}
         {{ with resources.Get .src }}
-          {{ $profileImage := .Process "webp q88" }}
+          {{ $profileImage := .Resize "720x webp q86" }}
+          {{ $profileSmall := .Resize "480x webp q84" }}
           <img 
             src="{{ $profileImage.RelPermalink }}" 
+            srcset="{{ $profileSmall.RelPermalink }} 480w, {{ $profileImage.RelPermalink }} 720w"
+            sizes="(min-width: 760px) 38vw, 100vw"
             width="{{ $profileImage.Width }}" 
             height="{{ $profileImage.Height }}" 
             alt="{{ $.Params.about.photo.alt }}"
@@ -135,6 +147,7 @@
     
     <div class="about-content">
       <div class="section-heading">
+        <p class="eyebrow">Poznaj terapeutę</p>
         <h2 id="about-title">{{ .Params.about.title }}</h2>
         <p class="section-subtitle">{{ .Params.about.subtitle }}</p>
       </div>
@@ -165,7 +178,8 @@
 </section>
 
 <section class="contact" id="kontakt" aria-labelledby="contact-title">
-  <div>
+  <div class="contact-copy">
+    <p class="eyebrow">Pierwszy krok</p>
     <h2 id="contact-title">{{ .Params.contact.title }}</h2>
     <p class="contact-subtitle">{{ .Params.contact.subtitle }}</p>
     <p class="contact-desc">{{ .Params.contact.description }}</p>
