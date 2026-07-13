@@ -3,16 +3,17 @@ title: "Fizjoterapia z dojazdem"
 description: "Fizjoterapia z dojazdem w Krakowie i okolicach, dopasowana do potrzeb Pacjenta."
 headline: "Fizjoterapia"
 headline_accent: "z dojazdem"
-location: "Kraków i okolice"
+location: "– Kraków i okolice"
 hero_photo:
-  src: "images/hero-v2.png"
-  alt: "Fizjoterapeuta z torbą terapeutyczną podczas wizyty domowej."
+  desktop_src: "images/hero-desktop.webp"
+  mobile_src: "images/hero-mobile.webp"
+  alt: "Fizjoterapeuta Łukasz z torbą terapeutyczną stojący obok samochodu przed wizytą domową."
 primary_action:
-  label: "Umów wizytę"
-  url: "#kontakt"
-secondary_action:
   label: "Zobacz ofertę"
   url: "#oferta"
+secondary_action:
+  label: "Umów wizytę"
+  url: "#kontakt"
 travel_info: "Przyjeżdżam z potrzebnym wyposażeniem, aby terapia mogła odbywać się komfortowo w domowym otoczeniu."
 
 services:

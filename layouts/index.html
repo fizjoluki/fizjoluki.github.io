@@ -1,42 +1,57 @@
 {{ define "main" }}
 <section class="hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1 id="hero-title">
-        <span>{{ .Params.headline }}</span>
-        <span class="hero-title-accent">{{ .Params.headline_accent }}</span>
-      </h1>
-      <p class="hero-location">{{ .Params.location }}</p>
-      
-      <div class="actions">
-        {{ with .Params.primary_action }}
-          <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
-        {{ end }}
-        {{ with .Params.secondary_action }}
-          <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
-        {{ end }}
+  <div class="hero-stage">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          <span>{{ .Params.headline }}</span>
+          <span class="hero-title-accent">{{ .Params.headline_accent }}</span>
+        </h1>
+        <p class="hero-location">{{ .Params.location }}</p>
+
+        <div class="actions">
+          {{ with .Params.primary_action }}
+            <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
+          {{ end }}
+          {{ with .Params.secondary_action }}
+            <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
+          {{ end }}
+        </div>
       </div>
     </div>
-  </div>
 
-  {{ with .Params.hero_photo }}
-    {{ with resources.Get .src }}
-      {{ $hero := .Process "webp q86" }}
-      {{ $heroSmall := .Resize "960x webp q84" }}
-      <div class="hero-media">
-        <img
-          src="{{ $hero.RelPermalink }}"
-          srcset="{{ $heroSmall.RelPermalink }} 960w, {{ $hero.RelPermalink }} {{ $hero.Width }}w"
-          sizes="100vw"
-          width="{{ $hero.Width }}"
-          height="{{ $hero.Height }}"
-          alt="{{ $.Params.hero_photo.alt }}"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high">
-      </div>
+    {{ with .Params.hero_photo }}
+      {{ $desktop := resources.Get .desktop_src }}
+      {{ $mobile := resources.Get .mobile_src }}
+      {{ if and $desktop $mobile }}
+        {{ $desktopSmall := $desktop.Resize "960x webp q82" }}
+        {{ $desktopMedium := $desktop.Resize "1600x webp q84" }}
+        {{ $desktopLarge := $desktop.Resize "2400x webp q86" }}
+        {{ $mobileSmall := $mobile.Resize "480x webp q82" }}
+        {{ $mobileMedium := $mobile.Resize "760x webp q84" }}
+        {{ $mobileLarge := $mobile.Resize "1200x webp q86" }}
+        <div class="hero-media">
+          <picture>
+            <source
+              media="(max-width: 760px) and (orientation: portrait)"
+              srcset="{{ $mobileSmall.RelPermalink }} 480w, {{ $mobileMedium.RelPermalink }} 760w, {{ $mobileLarge.RelPermalink }} 1200w"
+              sizes="100vw">
+            <source
+              srcset="{{ $desktopSmall.RelPermalink }} 960w, {{ $desktopMedium.RelPermalink }} 1600w, {{ $desktopLarge.RelPermalink }} 2400w"
+              sizes="100vw">
+            <img
+              src="{{ $desktopMedium.RelPermalink }}"
+              width="{{ $desktopMedium.Width }}"
+              height="{{ $desktopMedium.Height }}"
+              alt="{{ .alt }}"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high">
+          </picture>
+        </div>
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </div>
 
   {{ with .Params.travel_info }}
     <div class="hero-travel-bar">
