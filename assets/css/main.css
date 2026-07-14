@@ -404,6 +404,30 @@ h3 {
   color: var(--accent-deep);
 }
 
+.hero .button-primary {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.hero .button-primary:hover,
+.hero .button-primary:focus-visible {
+  background: var(--ink-soft);
+  border-color: var(--ink-soft);
+}
+
+.hero .button-secondary {
+  background: var(--taupe-deep);
+  border-color: var(--taupe-deep);
+  color: var(--on-deep);
+}
+
+.hero .button-secondary:hover,
+.hero .button-secondary:focus-visible {
+  background: var(--warm-deep);
+  border-color: var(--warm-deep);
+  color: var(--on-deep);
+}
+
 .travel {
   align-items: center;
   background: var(--ink);
