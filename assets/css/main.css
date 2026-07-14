@@ -747,9 +747,10 @@ h3 {
   .hero-stage::after {
     background:
       radial-gradient(
-        ellipse 92% 44% at 100% 0%,
+        ellipse 110% 42% at 85% 0%,
         rgba(246, 245, 244, 0.97) 0%,
-        rgba(246, 245, 244, 0.78) 52%,
+        rgba(246, 245, 244, 0.84) 68%,
+        rgba(246, 245, 244, 0.45) 82%,
         rgba(246, 245, 244, 0) 100%
       ),
       radial-gradient(
