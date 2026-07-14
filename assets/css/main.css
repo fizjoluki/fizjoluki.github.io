@@ -201,6 +201,11 @@ main > section[id] {
 }
 
 .hero-stage {
+  --hero-title-size: clamp(2.55rem, 5.2vw, 6.25rem);
+  --hero-location-size: clamp(1.1rem, calc(var(--hero-title-size) * 0.3), 1.75rem);
+  --hero-button-font-size: clamp(1rem, calc(var(--hero-title-size) * 0.29), 1.8rem);
+  --hero-button-height: clamp(3.5rem, calc(var(--hero-title-size) * 1.15), 7.2rem);
+  --hero-button-width: clamp(15rem, calc(var(--hero-title-size) * 4.6), 28.75rem);
   --hero-safe-inline: clamp(1rem, 5.3vw, 6.5rem);
 
   background: var(--surface-soft);
@@ -307,7 +312,7 @@ h3 {
 
 .hero h1 {
   color: var(--ink-deep);
-  font-size: clamp(2.4rem, 4.4vw, 5.15rem);
+  font-size: var(--hero-title-size);
   letter-spacing: -0.035em;
   line-height: 0.96;
   margin-bottom: 0;
@@ -325,10 +330,11 @@ h3 {
 
 .hero-location {
   color: var(--ink);
-  font-size: clamp(1rem, 1.45vw, 1.35rem);
+  font-size: var(--hero-location-size);
   font-weight: 700;
   letter-spacing: 0.015em;
   margin: clamp(1.1rem, 2.6vh, 1.65rem) 0 0;
+  text-transform: uppercase;
 }
 
 .actions,
@@ -343,18 +349,18 @@ h3 {
 .hero .actions {
   align-items: stretch;
   flex-direction: column;
-  gap: 0.7rem;
-  margin-top: clamp(1.5rem, 3.8vh, 2.35rem);
-  width: min(15rem, 100%);
+  gap: clamp(0.85rem, 1.8vh, 1.2rem);
+  margin-top: clamp(3.5rem, 15vh, 8rem);
+  width: min(var(--hero-button-width), 100%);
 }
 
 .hero .button {
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: var(--hero-button-font-size);
   line-height: 1.25;
-  min-height: 3.25rem;
+  min-height: var(--hero-button-height);
   padding: 0.75rem 1rem;
-  text-transform: lowercase;
+  text-transform: uppercase;
   width: 100%;
 }
 
@@ -646,6 +652,11 @@ h3 {
 }
 
 @media (min-width: 761px) {
+  .hero-stage {
+    --hero-title-size: clamp(3rem, 5.2vw, 6.25rem);
+    --hero-location-size: clamp(1.2rem, calc(var(--hero-title-size) * 0.3), 1.75rem);
+  }
+
   .benefits {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -721,6 +732,10 @@ h3 {
 
 @media (max-width: 600px) and (orientation: portrait) {
   .hero-stage {
+    --hero-title-size: clamp(2.15rem, 10.2vw, 3.1rem);
+    --hero-button-font-size: clamp(0.82rem, calc(var(--hero-title-size) * 0.34), 1rem);
+    --hero-button-height: clamp(2.85rem, calc(var(--hero-title-size) * 1.15), 3.1rem);
+    --hero-button-width: clamp(9.5rem, calc(var(--hero-title-size) * 3.8), 11rem);
     --hero-safe-inline: max(1rem, env(safe-area-inset-left));
 
     min-height: 35rem;
@@ -765,7 +780,6 @@ h3 {
   }
 
   .hero h1 {
-    font-size: clamp(2.15rem, 10.2vw, 3.1rem);
     grid-column: 1 / -1;
     grid-row: 1;
     justify-self: end;
@@ -785,15 +799,15 @@ h3 {
 
   .hero .actions {
     align-self: end;
+    gap: 0.7rem;
     grid-column: 2;
     grid-row: 4;
+    justify-self: end;
     margin-top: clamp(1.5rem, 4svh, 2.5rem);
-    width: 100%;
+    width: min(var(--hero-button-width), 100%);
   }
 
   .hero .button {
-    font-size: clamp(0.9rem, 3.8vw, 1rem);
-    min-height: 3.1rem;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
@@ -801,6 +815,8 @@ h3 {
 
 @media (orientation: landscape) and (max-height: 700px) {
   .hero-stage {
+    --hero-title-size: clamp(2.35rem, 5.8vw, 4rem);
+
     min-height: 20rem;
     min-height: max(20rem, calc(100svh - var(--header-height)));
   }
@@ -808,10 +824,6 @@ h3 {
   .hero-inner {
     padding-bottom: clamp(1.4rem, 5svh, 2.5rem);
     padding-top: clamp(1.4rem, 5svh, 2.5rem);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.35rem, 5.8vw, 4rem);
   }
 
   .hero-location {
@@ -824,7 +836,6 @@ h3 {
   }
 
   .hero .button {
-    min-height: 2.85rem;
     padding-bottom: 0.6rem;
     padding-top: 0.6rem;
   }
