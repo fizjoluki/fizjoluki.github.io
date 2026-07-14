@@ -109,7 +109,6 @@ svg {
   }
 }
 
-.site-nav,
 .site-footer,
 .travel,
 .benefits,
@@ -125,8 +124,11 @@ svg {
   display: flex;
   gap: clamp(0.5rem, 2.5vw, 1.5rem);
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
   min-height: calc(var(--header-height) - 0.35rem);
   padding: 0.45rem 0;
+  width: calc(100% - 2rem);
 }
 
 .brand {
