@@ -109,7 +109,6 @@ svg {
   }
 }
 
-.site-nav,
 .site-footer,
 .travel,
 .benefits,
@@ -126,7 +125,8 @@ svg {
   gap: clamp(0.5rem, 2.5vw, 1.5rem);
   justify-content: space-between;
   min-height: calc(var(--header-height) - 0.35rem);
-  padding: 0.45rem 0;
+  padding: 0.45rem 1rem;
+  width: 100%;
 }
 
 .brand {
@@ -689,8 +689,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.45rem 0;
-    width: min(calc(100% - 1rem), var(--content));
+    padding: 0.45rem 0.5rem;
   }
   
   .nav-links {
