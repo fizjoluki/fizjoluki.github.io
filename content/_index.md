@@ -14,7 +14,10 @@ primary_action:
 secondary_action:
   label: "umów wizytę"
   url: "#kontakt"
-travel_info: "Przyjeżdżam z potrzebnym wyposażeniem, aby terapia mogła odbywać się komfortowo w domowym otoczeniu."
+hero_slogans:
+  - "Terapia w Twoim domu"
+  - "Indywidualne podejście"
+  - "Rehabilitacja neurologiczna i\u00A0pooperacyjna"
 
 services:
   - icon: "brain"

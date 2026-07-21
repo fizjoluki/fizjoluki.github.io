@@ -39,7 +39,16 @@
           <span>{{ .Params.headline }}</span>
           <span class="hero-title-accent">{{ .Params.headline_accent }}</span>
         </h1>
+
         <p class="hero-location">{{ .Params.location }}</p>
+
+        {{ with .Params.hero_slogans }}
+          <ul class="hero-slogans">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
 
         <div class="actions">
           {{ with .Params.primary_action }}
@@ -52,17 +61,6 @@
       </div>
     </div>
   </div>
-
-  {{ with .Params.travel_info }}
-    <div class="hero-travel-bar">
-      <div class="hero-travel-bar-inner">
-        <div class="hero-travel-icon" aria-hidden="true">
-          {{ partial "icon.html" "car" }}
-        </div>
-        <p>{{ . }}</p>
-      </div>
-    </div>
-  {{ end }}
 </section>
 
 <section class="offer" id="oferta" aria-labelledby="offer-title">
