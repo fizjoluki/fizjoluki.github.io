@@ -894,11 +894,11 @@ h3 {
   }
 
   .hero .actions {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 0.5rem;
     margin-top: clamp(0.75rem, 2.5vh, 1.1rem);
-    width: 100%;
+    width: min(var(--hero-button-width), 100%);
   }
 
   .hero-slogans {
@@ -919,14 +919,14 @@ h3 {
   }
 
   .hero .button {
-    flex: 0 1 var(--hero-button-width);
+    flex: none;
     min-width: 0;
     padding-bottom: 0.6rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.6rem;
     white-space: nowrap;
-    width: var(--hero-button-width);
+    width: 100%;
   }
 }
 
@@ -972,19 +972,6 @@ h3 {
   .hero .button {
     padding-left: 0.4rem;
     padding-right: 0.4rem;
-  }
-}
-
-@media (min-width: 761px) {
-  .hero .actions {
-    flex-direction: column;
-    width: min(var(--hero-button-width), 100%);
-  }
-
-  .hero .button {
-    flex: none;
-    min-width: var(--hero-button-width);
-    width: 100%;
   }
 }
 
