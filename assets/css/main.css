@@ -695,16 +695,6 @@ h3 {
     --hero-location-size: clamp(1.25rem, calc(var(--hero-title-size) * 0.3), 1.9rem);
   }
 
-  .hero .actions {
-    flex-direction: row;
-    width: auto;
-  }
-
-  .hero .button {
-    min-width: var(--hero-button-width);
-    width: auto;
-  }
-
   .benefits {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -982,6 +972,19 @@ h3 {
   .hero .button {
     padding-left: 0.4rem;
     padding-right: 0.4rem;
+  }
+}
+
+@media (min-width: 761px) {
+  .hero .actions {
+    flex-direction: column;
+    width: min(var(--hero-button-width), 100%);
+  }
+
+  .hero .button {
+    flex: none;
+    min-width: var(--hero-button-width);
+    width: 100%;
   }
 }
 
