@@ -767,7 +767,7 @@ h3 {
   }
 }
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .hero-stage {
     --hero-title-size: clamp(2.15rem, 10.2vw, 3.1rem);
     --hero-button-font-size: clamp(0.78rem, 3.3vw, 0.9rem);
