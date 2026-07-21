@@ -797,6 +797,13 @@ h3 {
         rgba(245, 240, 234, 0) 100%
       ),
       radial-gradient(
+        ellipse 68% 34% at 82% 54%,
+        rgba(245, 240, 234, 0.9) 0%,
+        rgba(245, 240, 234, 0.72) 56%,
+        rgba(245, 240, 234, 0.28) 82%,
+        rgba(245, 240, 234, 0) 100%
+      ),
+      radial-gradient(
         ellipse 105% 58% at 100% 100%,
         rgba(245, 240, 234, 0.82) 0%,
         rgba(245, 240, 234, 0.5) 54%,
@@ -844,7 +851,25 @@ h3 {
   }
 
   .hero-slogans {
-    display: none;
+    align-self: center;
+    gap: clamp(0.35rem, 1.15svh, 0.55rem);
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: end;
+    margin: clamp(0.75rem, 2svh, 1.25rem) 0;
+    width: min(var(--hero-button-width), 100%);
+  }
+
+  .hero-slogans li {
+    font-size: clamp(0.78rem, 3.35vw, 0.95rem);
+    gap: 0.45rem;
+    line-height: 1.25;
+  }
+
+  .slogan-icon {
+    height: clamp(0.9rem, 3.5vw, 1rem);
+    margin-top: 0.1em;
+    width: clamp(0.9rem, 3.5vw, 1rem);
   }
 
   .hero-location {
