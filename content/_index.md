@@ -4,6 +4,10 @@ description: "Fizjoterapia z dojazdem w Krakowie i okolicach, dopasowana do potr
 headline: "Fizjoterapia"
 headline_accent: "z dojazdem"
 location: "Kraków i okolice"
+slogans:
+  - "terapia w Twoim domu"
+  - "indywidualne podejście"
+  - "rehabilitacja neurologiczna <br class=\"slogan-mobile-br\">i pooperacyjna"
 hero_photo:
   desktop_src: "images/hero-desktop.webp"
   mobile_src: "images/hero-mobile.webp"
@@ -14,7 +18,7 @@ primary_action:
 secondary_action:
   label: "umów wizytę"
   url: "#kontakt"
-travel_info: "Przyjeżdżam z potrzebnym wyposażeniem, aby terapia mogła odbywać się komfortowo w domowym otoczeniu."
+
 
 services:
   - icon: "brain"
