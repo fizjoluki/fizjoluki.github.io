@@ -98,14 +98,22 @@
   <div class="pricing-container">
     <div class="pricing-zones">
       {{ range .Params.pricing.zones }}
-        <article class="zone-card">
-          <div class="zone-header">
+        {{ $zoneName := .name }}
+        <article class="zone-card{{ with .prices }} zone-card-with-prices{{ end }}">
+          <div class="zone-copy">
             <h3 class="zone-name">{{ .name }}</h3>
-            {{ with .price }}
-              <span class="zone-price">{{ . }}</span>
-            {{ end }}
+            <p class="zone-desc">{{ .description }}</p>
           </div>
-          <p class="zone-desc">{{ .description }}</p>
+          {{ with .prices }}
+            <ul class="zone-prices" aria-label="Ceny terapii dla: {{ $zoneName }}">
+              {{ range . }}
+                <li class="zone-price-row">
+                  <span class="zone-price-amount">{{ .amount }}</span>
+                  <span class="zone-price-duration">/ {{ .duration }}</span>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
         </article>
       {{ end }}
     </div>

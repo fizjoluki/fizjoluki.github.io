@@ -38,13 +38,25 @@ pricing:
     alt: "Mapa stref dojazdu w Krakowie i okolicach"
   zones:
     - name: "Strefa I:"
-      price: "200 zł / 60 min • 280 zł / 90 min"
+      prices:
+        - amount: "200 zł"
+          duration: "60 min"
+        - amount: "280 zł"
+          duration: "90 min"
       description: "Czyżyny, Prądnik Czerwony, Mistrzejowice, Bieńczyce, część Nowej Huty oraz wybrane obszary sąsiednich dzielnic."
     - name: "Strefa II:"
-      price: "220 zł / 60 min • 300 zł / 90 min"
+      prices:
+        - amount: "220 zł"
+          duration: "60 min"
+        - amount: "300 zł"
+          duration: "90 min"
       description: "Podgórze, Grzegórzki, Prądnik Biały oraz wybrane obszary pozostałych dzielnic."
     - name: "Strefa III:"
-      price: "240 zł / 60 min • 320 zł / 90 min"
+      prices:
+        - amount: "240 zł"
+          duration: "60 min"
+        - amount: "320 zł"
+          duration: "90 min"
       description: "Pozostałe obszary Krakowa znajdujące się w granicach obwodnicy miasta."
     - name: "Poza strefami:"
       description: "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
