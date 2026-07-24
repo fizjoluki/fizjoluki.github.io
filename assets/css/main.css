@@ -1034,16 +1034,14 @@ h3 {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 761px) {
-  .pricing-container {
-    grid-template-columns: 1.15fr 0.85fr;
-  }
+.pricing-heading {
+  margin-bottom: 1.5rem;
 }
 
-.pricing-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+@media (min-width: 960px) {
+  .pricing-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .section-subtitle {
@@ -1070,29 +1068,56 @@ h3 {
   box-shadow: 0 6px 18px rgba(27, 54, 93, 0.05);
 }
 
-.zone-header {
-  display: flex;
-  justify-content: space-between;
+.zone-card-with-prices {
   align-items: center;
-  margin-bottom: 0.45rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.15rem);
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.zone-copy {
+  min-width: 0;
 }
 
 .zone-name {
-  font-weight: 780;
   color: var(--ink-deep);
   font-size: 1.05rem;
+  font-weight: 780;
+  letter-spacing: normal;
+  margin: 0 0 0.45rem;
+  text-transform: none;
 }
 
-.zone-price {
-  background: var(--ink);
+.zone-prices {
+  align-self: start;
   color: var(--on-deep);
-  font-weight: 800;
-  padding: 0.3rem 0.65rem;
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: clamp(7.75rem, 30vw, 9rem);
+}
+
+.zone-price-row {
+  align-items: center;
+  background: var(--ink);
   border-radius: 4px;
-  font-size: 0.9rem;
+  display: flex;
+  font-size: 0.86rem;
+  gap: 0.25rem;
+  justify-content: center;
+  padding: 0.5rem 0.45rem;
   white-space: nowrap;
+}
+
+.zone-price-amount {
+  font-weight: 850;
+}
+
+.zone-price-duration {
+  font-weight: 700;
+  opacity: 0.92;
 }
 
 .zone-desc {
@@ -1102,33 +1127,17 @@ h3 {
   line-height: 1.5;
 }
 
-.pricing-extra-card {
-  align-items: center;
-  background: var(--accent-soft);
-  border: 1px solid rgba(132, 120, 111, 0.25);
-  border-radius: 6px;
+.pricing-aside {
+  align-self: start;
   display: flex;
-  gap: 1rem;
-  padding: 1.15rem;
-}
-
-.extra-icon {
-  color: var(--accent-deep);
-  flex: 0 0 auto;
-  height: 2rem;
-  width: 2rem;
-}
-
-.extra-text {
-  color: var(--ink-deep);
-  font-weight: 760;
-  margin: 0;
-  font-size: 0.95rem;
+  flex-direction: column;
+  gap: 1.15rem;
+  justify-self: center;
+  max-width: 640px;
+  width: 100%;
 }
 
 .pricing-map {
-  align-self: center;
-  justify-self: center;
   width: 100%;
 }
 
@@ -1136,12 +1145,48 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
-  height: auto;
-  object-fit: cover;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
   display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 640px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.pricing-notes {
+  border-left: 3px solid var(--accent-deep);
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+.pricing-notes p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.pricing-payment {
+  background: var(--accent-soft);
+  border: 1px solid rgba(132, 120, 111, 0.25);
+  border-radius: 6px;
+  padding: 1.15rem;
+}
+
+.pricing-payment h3 {
+  color: var(--ink-deep);
+  font-size: 1rem;
+  letter-spacing: normal;
+  margin: 0 0 0.45rem;
+  text-transform: none;
+}
+
+.pricing-payment p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* O mnie Section */
