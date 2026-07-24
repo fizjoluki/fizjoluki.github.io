@@ -32,25 +32,28 @@ services:
     summary: "Masaż leczniczy, tkanek głębokich oraz techniki powięziowe dostosowane do indywidualnych potrzeb. Pomaga w redukcji napięcia mięśniowego, łagodzeniu przewlekłego bólu oraz przyspieszeniu regeneracji organizmu."
 
 pricing:
-  title: "Cennik i strefy"
-  subtitle: "Dojazd w cenie terapii na terenie Krakowa"
+  title: "Cennik i strefy dojazdu"
   map_photo:
     src: "images/strefy_krakow.webp"
     alt: "Mapa stref dojazdu w Krakowie i okolicach"
-  extra_info: "Terapia 90 minut: +80 zł do ceny podstawowej."
   zones:
-    - name: "Strefa 1 (okolica Czyżyn)"
-      price: "200 zł / h"
-      description: "Najbliższy obszar dojazdu, obejmujący Czyżyny oraz sąsiednie osiedla."
-    - name: "Strefa 2 (Kraków)"
-      price: "220 zł / h"
-      description: "Pozostałe dzielnice Krakowa (obszar pośredni)."
-    - name: "Strefa 3 (Obrzeża)"
-      price: "240 zł / h"
-      description: "Obszary graniczne Krakowa oraz bliskie okolice."
-    - name: "Strefa 4 (Okolice Krakowa)"
-      price: "Wycena indywidualna"
-      description: "Dalsze miejscowości podkrakowskie (ustalane telefonicznie)."
+    - name: "Strefa I:"
+      price: "200 zł / 60 min • 280 zł / 90 min"
+      description: "Czyżyny, Prądnik Czerwony, Mistrzejowice, Bieńczyce, część Nowej Huty oraz wybrane obszary sąsiednich dzielnic."
+    - name: "Strefa II:"
+      price: "220 zł / 60 min • 300 zł / 90 min"
+      description: "Podgórze, Grzegórzki, Prądnik Biały oraz wybrane obszary pozostałych dzielnic."
+    - name: "Strefa III:"
+      price: "240 zł / 60 min • 320 zł / 90 min"
+      description: "Pozostałe obszary Krakowa znajdujące się w granicach obwodnicy miasta."
+    - name: "Poza strefami:"
+      description: "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
+  notes:
+    - "Strefy dojazdu obowiązują zgodnie z mapą. Podane dzielnice mają charakter orientacyjny."
+    - "Podane ceny zawierają koszt dojazdu oraz opłaty związane z parkowaniem w strefie płatnego parkowania."
+  payment:
+    title: "Płatności:"
+    description: "Gotówka, karta płatnicza lub BLIK. Na życzenie wystawiam fakturę."
 
 about:
   title: "O mnie"

@@ -1026,16 +1026,36 @@ h3 {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 960px) {
-  .pricing-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .pricing-info {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .pricing-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.5rem;
+  }
+
+  .pricing-info {
+    display: contents;
+  }
+
+  .pricing-info > .section-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .pricing-zones {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .pricing-aside {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 
 .section-subtitle {
@@ -1072,9 +1092,12 @@ h3 {
 }
 
 .zone-name {
-  font-weight: 780;
   color: var(--ink-deep);
   font-size: 1.05rem;
+  font-weight: 780;
+  letter-spacing: normal;
+  margin: 0;
+  text-transform: none;
 }
 
 .zone-price {
@@ -1094,33 +1117,17 @@ h3 {
   line-height: 1.5;
 }
 
-.pricing-extra-card {
-  align-items: center;
-  background: var(--accent-soft);
-  border: 1px solid rgba(132, 120, 111, 0.25);
-  border-radius: 6px;
+.pricing-aside {
+  align-self: start;
   display: flex;
-  gap: 1rem;
-  padding: 1.15rem;
-}
-
-.extra-icon {
-  color: var(--accent-deep);
-  flex: 0 0 auto;
-  height: 2rem;
-  width: 2rem;
-}
-
-.extra-text {
-  color: var(--ink-deep);
-  font-weight: 760;
-  margin: 0;
-  font-size: 0.95rem;
+  flex-direction: column;
+  gap: 1.15rem;
+  justify-self: center;
+  max-width: 640px;
+  width: 100%;
 }
 
 .pricing-map {
-  align-self: center;
-  justify-self: center;
   width: 100%;
 }
 
@@ -1134,6 +1141,42 @@ h3 {
   max-width: 640px;
   object-fit: contain;
   width: 100%;
+}
+
+.pricing-notes {
+  border-left: 3px solid var(--accent-deep);
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+.pricing-notes p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.pricing-payment {
+  background: var(--accent-soft);
+  border: 1px solid rgba(132, 120, 111, 0.25);
+  border-radius: 6px;
+  padding: 1.15rem;
+}
+
+.pricing-payment h3 {
+  color: var(--ink-deep);
+  font-size: 1rem;
+  letter-spacing: normal;
+  margin: 0 0 0.45rem;
+  text-transform: none;
+}
+
+.pricing-payment p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* O mnie Section */

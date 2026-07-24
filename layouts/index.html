@@ -92,47 +92,59 @@
     <div class="pricing-info">
       <div class="section-heading">
         <h2 id="pricing-title">{{ .Params.pricing.title }}</h2>
-        <p class="section-subtitle">{{ .Params.pricing.subtitle }}</p>
+        {{ with .Params.pricing.subtitle }}
+          <p class="section-subtitle">{{ . }}</p>
+        {{ end }}
       </div>
       
       <div class="pricing-zones">
         {{ range .Params.pricing.zones }}
-          <div class="zone-card">
+          <article class="zone-card">
             <div class="zone-header">
-              <span class="zone-name">{{ .name }}</span>
-              <span class="zone-price">{{ .price }}</span>
+              <h3 class="zone-name">{{ .name }}</h3>
+              {{ with .price }}
+                <span class="zone-price">{{ . }}</span>
+              {{ end }}
             </div>
             <p class="zone-desc">{{ .description }}</p>
-          </div>
+          </article>
         {{ end }}
       </div>
-      
-      {{ with .Params.pricing.extra_info }}
-        <div class="pricing-extra-card">
-          <div class="extra-icon" aria-hidden="true">
-            {{ partial "icon.html" "person" }}
-          </div>
-          <p class="extra-text">{{ . }}</p>
-        </div>
-      {{ end }}
     </div>
 
-    <div class="pricing-map">
-      {{ with .Params.pricing.map_photo }}
-        {{ with resources.Get .src }}
-          {{ $mapSmall := .Resize "480x webp q88" }}
-          {{ $mapMedium := .Resize "960x webp q90" }}
-          <img 
-            src="{{ $mapMedium.RelPermalink }}"
-            srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
-            sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
-            width="{{ .Width }}"
-            height="{{ .Height }}"
-            alt="{{ $.Params.pricing.map_photo.alt }}"
-            class="pricing-map-img"
-            loading="lazy"
-            decoding="async">
+    <div class="pricing-aside">
+      <div class="pricing-map">
+        {{ with .Params.pricing.map_photo }}
+          {{ with resources.Get .src }}
+            {{ $mapSmall := .Resize "480x webp q88" }}
+            {{ $mapMedium := .Resize "960x webp q90" }}
+            <img
+              src="{{ $mapMedium.RelPermalink }}"
+              srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
+              sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
+              width="{{ .Width }}"
+              height="{{ .Height }}"
+              alt="{{ $.Params.pricing.map_photo.alt }}"
+              class="pricing-map-img"
+              loading="lazy"
+              decoding="async">
+          {{ end }}
         {{ end }}
+      </div>
+
+      {{ with .Params.pricing.notes }}
+        <div class="pricing-notes" aria-label="Informacje o strefach i cenach">
+          {{ range . }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with .Params.pricing.payment }}
+        <div class="pricing-payment">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
       {{ end }}
     </div>
   </div>
