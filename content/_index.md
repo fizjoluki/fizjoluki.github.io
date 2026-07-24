@@ -15,9 +15,8 @@ secondary_action:
   label: "umów wizytę"
   url: "#kontakt"
 hero_slogans:
-  - "Terapia w Twoim domu"
-  - "Indywidualne podejście"
-  - "Rehabilitacja neurologiczna"
+  - "Wizyty domowe"
+  - "Neurorehabilitacja"
   - "Rehabilitacja pooperacyjna"
 
 services:
