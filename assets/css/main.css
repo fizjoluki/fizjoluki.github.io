@@ -1026,9 +1026,9 @@ h3 {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 960px) {
   .pricing-container {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1128,12 +1128,12 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
-  height: auto;
-  object-fit: cover;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
   display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 640px;
+  object-fit: contain;
+  width: 100%;
 }
 
 /* O mnie Section */

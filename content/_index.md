@@ -35,7 +35,7 @@ pricing:
   title: "Cennik i strefy"
   subtitle: "Dojazd w cenie terapii na terenie Krakowa"
   map_photo:
-    src: "images/krakow_map.png"
+    src: "images/strefy_krakow.webp"
     alt: "Mapa stref dojazdu w Krakowie i okolicach"
   extra_info: "Terapia 90 minut: +80 zł do ceny podstawowej."
   zones:

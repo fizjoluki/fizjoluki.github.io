@@ -120,11 +120,14 @@
     <div class="pricing-map">
       {{ with .Params.pricing.map_photo }}
         {{ with resources.Get .src }}
-          {{ $mapImage := .Process "webp q90" }}
+          {{ $mapSmall := .Resize "480x webp q88" }}
+          {{ $mapMedium := .Resize "960x webp q90" }}
           <img 
-            src="{{ $mapImage.RelPermalink }}" 
-            width="{{ $mapImage.Width }}" 
-            height="{{ $mapImage.Height }}" 
+            src="{{ $mapMedium.RelPermalink }}"
+            srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
+            sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
+            width="{{ .Width }}"
+            height="{{ .Height }}"
             alt="{{ $.Params.pricing.map_photo.alt }}"
             class="pricing-map-img"
             loading="lazy"
