@@ -537,9 +537,6 @@ h3 {
   background: var(--paper-strong);
   border-bottom: 1px solid var(--line);
   border-top: 1px solid var(--line);
-  display: grid;
-  gap: clamp(1.6rem, 4vw, 3.4rem);
-  grid-template-columns: 1fr;
   margin-top: 0;
   padding:
     clamp(2.3rem, 5vw, 4.8rem)
@@ -562,7 +559,8 @@ h3 {
 
 .service-list {
   display: grid;
-  gap: 0.9rem;
+  gap: clamp(0.9rem, 1.6vw, 1.15rem);
+  margin-top: clamp(1.8rem, 4vw, 3rem);
 }
 
 .service-item {
@@ -573,6 +571,7 @@ h3 {
   display: grid;
   gap: 1rem;
   grid-template-columns: 4.5rem minmax(0, 1fr);
+  height: 100%;
   padding: clamp(1.15rem, 2.7vw, 1.75rem);
 }
 
@@ -642,10 +641,12 @@ h3 {
 }
 
 .contact {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 3.4rem);
   align-items: center;
-  align-content: center;
   grid-template-columns: 1fr;
-  min-height: calc(100svh - var(--header-height));
+  padding-bottom: clamp(3rem, 6vw, 5.5rem);
+  padding-top: clamp(3rem, 6vw, 5.5rem);
 }
 
 .contact h2 {
@@ -699,10 +700,6 @@ h3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .offer {
-    grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.28fr);
-  }
-
   .manual {
     grid-template-columns: minmax(0, 1fr) minmax(8rem, 0.32fr);
   }
@@ -718,6 +715,23 @@ h3 {
 
   .contact-links {
     justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-list {
+    align-items: stretch;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .service-item {
+    align-content: start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .service-item p {
+    max-width: none;
   }
 }
 
@@ -751,10 +765,6 @@ h3 {
   .site-footer,
   .not-found {
     width: min(calc(100% - 1rem), var(--content));
-  }
-
-  .service-item {
-    grid-template-columns: 1fr;
   }
 
   .value-strip {
@@ -1010,6 +1020,7 @@ h3 {
   }
 
   .service-item {
+    grid-template-columns: 1fr;
     padding: 1rem;
   }
 }
@@ -1278,8 +1289,16 @@ h3 {
 .contact-subtitle {
   color: var(--muted);
   font-size: 1.15rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.contact-subtitle::after {
+  background: var(--accent);
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 1.25rem;
+  width: 4.5rem;
 }
 
 .contact-desc {
