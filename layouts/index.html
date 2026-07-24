@@ -59,10 +59,10 @@
 
         <div class="actions">
           {{ with .Params.primary_action }}
-            <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
+            <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
           {{ end }}
           {{ with .Params.secondary_action }}
-            <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
+            <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
           {{ end }}
         </div>
       </div>

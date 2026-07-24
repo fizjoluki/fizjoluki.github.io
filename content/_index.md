@@ -17,7 +17,8 @@ secondary_action:
 hero_slogans:
   - "Terapia w Twoim domu"
   - "Indywidualne podejście"
-  - "Rehabilitacja neurologiczna i\u00A0pooperacyjna"
+  - "Rehabilitacja neurologiczna"
+  - "Rehabilitacja pooperacyjna"
 
 services:
   - icon: "brain"
