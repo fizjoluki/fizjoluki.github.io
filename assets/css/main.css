@@ -1026,35 +1026,13 @@ h3 {
   grid-template-columns: 1fr;
 }
 
-.pricing-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.pricing-heading {
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 960px) {
   .pricing-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 1.5rem;
-  }
-
-  .pricing-info {
-    display: contents;
-  }
-
-  .pricing-info > .section-heading {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .pricing-zones {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .pricing-aside {
-    grid-column: 2;
-    grid-row: 2;
   }
 }
 

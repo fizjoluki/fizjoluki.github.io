@@ -88,28 +88,26 @@
 </section>
 
 <section class="pricing-section" id="cennik" aria-labelledby="pricing-title">
+  <div class="section-heading pricing-heading">
+    <h2 id="pricing-title">{{ .Params.pricing.title }}</h2>
+    {{ with .Params.pricing.subtitle }}
+      <p class="section-subtitle">{{ . }}</p>
+    {{ end }}
+  </div>
+
   <div class="pricing-container">
-    <div class="pricing-info">
-      <div class="section-heading">
-        <h2 id="pricing-title">{{ .Params.pricing.title }}</h2>
-        {{ with .Params.pricing.subtitle }}
-          <p class="section-subtitle">{{ . }}</p>
-        {{ end }}
-      </div>
-      
-      <div class="pricing-zones">
-        {{ range .Params.pricing.zones }}
-          <article class="zone-card">
-            <div class="zone-header">
-              <h3 class="zone-name">{{ .name }}</h3>
-              {{ with .price }}
-                <span class="zone-price">{{ . }}</span>
-              {{ end }}
-            </div>
-            <p class="zone-desc">{{ .description }}</p>
-          </article>
-        {{ end }}
-      </div>
+    <div class="pricing-zones">
+      {{ range .Params.pricing.zones }}
+        <article class="zone-card">
+          <div class="zone-header">
+            <h3 class="zone-name">{{ .name }}</h3>
+            {{ with .price }}
+              <span class="zone-price">{{ . }}</span>
+            {{ end }}
+          </div>
+          <p class="zone-desc">{{ .description }}</p>
+        </article>
+      {{ end }}
     </div>
 
     <div class="pricing-aside">
