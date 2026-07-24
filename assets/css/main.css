@@ -695,16 +695,6 @@ h3 {
     --hero-location-size: clamp(1.25rem, calc(var(--hero-title-size) * 0.3), 1.9rem);
   }
 
-  .hero .actions {
-    flex-direction: row;
-    width: auto;
-  }
-
-  .hero .button {
-    min-width: var(--hero-button-width);
-    width: auto;
-  }
-
   .benefits {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -777,7 +767,7 @@ h3 {
   }
 }
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .hero-stage {
     --hero-title-size: clamp(2.15rem, 10.2vw, 3.1rem);
     --hero-button-font-size: clamp(0.78rem, 3.3vw, 0.9rem);
@@ -788,27 +778,14 @@ h3 {
   }
 
   .hero-stage::after {
-    background:
-      radial-gradient(
-        ellipse 110% 42% at 85% 0%,
-        rgba(245, 240, 234, 0.97) 0%,
-        rgba(245, 240, 234, 0.84) 68%,
-        rgba(245, 240, 234, 0.45) 82%,
-        rgba(245, 240, 234, 0) 100%
-      ),
-      radial-gradient(
-        ellipse 68% 34% at 82% 54%,
-        rgba(245, 240, 234, 0.9) 0%,
-        rgba(245, 240, 234, 0.72) 56%,
-        rgba(245, 240, 234, 0.28) 82%,
-        rgba(245, 240, 234, 0) 100%
-      ),
-      radial-gradient(
-        ellipse 105% 58% at 100% 100%,
-        rgba(245, 240, 234, 0.82) 0%,
-        rgba(245, 240, 234, 0.5) 54%,
-        rgba(245, 240, 234, 0) 100%
-      );
+    background: linear-gradient(
+      to left,
+      rgba(245, 240, 234, 0.97) 0%,
+      rgba(245, 240, 234, 0.9) 34%,
+      rgba(245, 240, 234, 0.62) 49%,
+      rgba(245, 240, 234, 0.14) 61%,
+      rgba(245, 240, 234, 0) 68%
+    );
   }
 
   .hero-media img {
@@ -904,11 +881,11 @@ h3 {
   }
 
   .hero .actions {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 0.5rem;
     margin-top: clamp(0.75rem, 2.5vh, 1.1rem);
-    width: 100%;
+    width: min(var(--hero-button-width), 100%);
   }
 
   .hero-slogans {
@@ -929,14 +906,14 @@ h3 {
   }
 
   .hero .button {
-    flex: 0 1 var(--hero-button-width);
+    flex: none;
     min-width: 0;
     padding-bottom: 0.6rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.6rem;
     white-space: nowrap;
-    width: var(--hero-button-width);
+    width: 100%;
   }
 }
 
@@ -982,6 +959,37 @@ h3 {
   .hero .button {
     padding-left: 0.4rem;
     padding-right: 0.4rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero-copy {
+    align-content: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .hero h1 {
+    grid-column: 2;
+    justify-self: end;
+    text-align: right;
+    width: fit-content;
+  }
+
+  .hero-location,
+  .hero-slogans,
+  .hero .actions {
+    align-self: start;
+    justify-self: end;
+  }
+
+  .hero-location,
+  .hero-slogans {
+    width: fit-content;
+  }
+
+  .hero .actions {
+    width: min(19rem, 100%);
   }
 }
 
