@@ -90,7 +90,7 @@ about:
 contact:
   title: "Kontakt"
   subtitle: "Zadzwoń lub napisz"
-  description: "Masz pytania dotyczące dojazdu, przebiegu rehabilitacji domowej lub wolnych terminów? Serdecznie zapraszam do kontaktu telefonicznego lub mailowego. Chętnie odpowiem na wszelkie pytania i pomogę dobrać odpowiednią formę terapii."
-  phone: "+48 123 456 789"
+  description: "W razie pytań dotyczących dojazdu, przebiegu rehabilitacji domowej lub dostępnych terminów zapraszam do kontaktu telefonicznego bądź mailowego. Chętnie odpowiem na pytania i pomogę dobrać odpowiednią formę terapii."
+  phone: "+48 509 427 041"
   email: "kontakt@fizjoluki.pl"
 ---
