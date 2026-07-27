@@ -31,10 +31,17 @@ services:
     summary: "Masaż leczniczy, tkanek głębokich oraz techniki powięziowe dostosowane do indywidualnych potrzeb. Pomaga w redukcji napięcia mięśniowego, łagodzeniu przewlekłego bólu oraz przyspieszeniu regeneracji organizmu."
 
 pricing:
-  title: "Cennik i strefy dojazdu"
+  title: "Cennik"
+  subtitle: "Cennik obowiązuje od 07.2026 r."
+  map_title: "Sprawdź strefę dojazdu"
+  map_description: "Mapa przedstawia orientacyjny podział Krakowa na strefy I–III."
+  map_caption: "Podane dzielnice i granice stref mają charakter orientacyjny."
+  map_action:
+    label: "Skontaktuj się, aby potwierdzić koszt usługi."
+    url: "#kontakt"
   map_photo:
     src: "images/strefy_krakow.webp"
-    alt: "Mapa stref dojazdu w Krakowie i okolicach"
+    alt: "Orientacyjna mapa Krakowa z zaznaczonymi strefami dojazdu I, II i III"
   zones:
     - name: "Strefa I:"
       prices:
@@ -60,7 +67,6 @@ pricing:
     - name: "Poza strefami:"
       description: "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
   notes:
-    - "Strefy dojazdu obowiązują zgodnie z mapą. Podane dzielnice mają charakter orientacyjny."
     - "Podane ceny zawierają koszt dojazdu oraz opłaty związane z parkowaniem w strefie płatnego parkowania."
   payment:
     title: "Płatności:"

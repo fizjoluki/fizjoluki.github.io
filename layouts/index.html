@@ -119,21 +119,83 @@
     </div>
 
     <div class="pricing-aside">
-      <div class="pricing-map">
+      <div class="pricing-map-panel" aria-labelledby="pricing-map-title">
+        <div class="pricing-map-heading">
+          <h3 id="pricing-map-title">{{ .Params.pricing.map_title }}</h3>
+          {{ with .Params.pricing.map_description }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </div>
+
+        <figure class="pricing-map">
+          {{ with .Params.pricing.map_photo }}
+            {{ with resources.Get .src }}
+              {{ $mapSmall := .Resize "480x webp q88" }}
+              {{ $mapMedium := .Resize "960x webp q90" }}
+              <a
+                class="pricing-map-trigger"
+                href="{{ .RelPermalink }}"
+                aria-label="Powiększ mapę stref dojazdu"
+                aria-haspopup="dialog"
+                aria-controls="pricing-map-dialog"
+                data-map-dialog-open>
+                <img
+                  src="{{ $mapMedium.RelPermalink }}"
+                  srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
+                  sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
+                  width="{{ .Width }}"
+                  height="{{ .Height }}"
+                  alt="{{ $.Params.pricing.map_photo.alt }}"
+                  class="pricing-map-img"
+                  loading="lazy"
+                  decoding="async">
+                <span class="pricing-map-zoom-hint" aria-hidden="true">
+                  <span class="pricing-map-zoom-icon">{{ partial "icon.html" "zoom-in" }}</span>
+                  Powiększ mapę
+                </span>
+              </a>
+            {{ end }}
+          {{ end }}
+          {{ with .Params.pricing.map_caption }}
+            <figcaption class="pricing-map-caption">
+              {{ . }}
+              {{ with $.Params.pricing.map_action }}
+                <a href="{{ .url | safeURL }}">{{ .label }}</a>
+              {{ end }}
+            </figcaption>
+          {{ end }}
+        </figure>
+
         {{ with .Params.pricing.map_photo }}
           {{ with resources.Get .src }}
-            {{ $mapSmall := .Resize "480x webp q88" }}
-            {{ $mapMedium := .Resize "960x webp q90" }}
-            <img
-              src="{{ $mapMedium.RelPermalink }}"
-              srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
-              sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
-              width="{{ .Width }}"
-              height="{{ .Height }}"
-              alt="{{ $.Params.pricing.map_photo.alt }}"
-              class="pricing-map-img"
-              loading="lazy"
-              decoding="async">
+            <dialog
+              class="pricing-map-dialog"
+              id="pricing-map-dialog"
+              aria-labelledby="pricing-map-dialog-title">
+              <div class="pricing-map-dialog-heading">
+                <div>
+                  <h2 id="pricing-map-dialog-title">Mapa stref dojazdu</h2>
+                  <p>Przesuwaj mapę, aby zobaczyć szczegóły.</p>
+                </div>
+                <button
+                  class="pricing-map-dialog-close"
+                  type="button"
+                  aria-label="Zamknij powiększoną mapę"
+                  data-map-dialog-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="pricing-map-dialog-viewport">
+                <img
+                  class="pricing-map-dialog-img"
+                  data-map-dialog-image
+                  data-src="{{ .RelPermalink }}"
+                  width="{{ .Width }}"
+                  height="{{ .Height }}"
+                  alt="{{ $.Params.pricing.map_photo.alt }}"
+                  decoding="async">
+              </div>
+            </dialog>
           {{ end }}
         {{ end }}
       </div>
@@ -224,4 +286,11 @@
     {{ end }}
   </div>
 </section>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ with resources.Get "js/map-dialog.js" }}
+    {{ $script := . | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+  {{ end }}
 {{ end }}
