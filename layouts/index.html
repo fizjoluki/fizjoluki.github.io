@@ -193,10 +193,15 @@
   <div class="about-container">
     <div class="about-media">
       {{ with .Params.about.photo }}
-      {{ with resources.Get .src }}
-      {{ $profileImage := .Process "webp q88" }}
-      <img src="{{ $profileImage.RelPermalink }}" width="{{ $profileImage.Width }}" height="{{ $profileImage.Height }}"
-        alt="{{ $.Params.about.photo.alt }}" class="about-photo" loading="lazy" decoding="async">
+      {{ $desktopImage := resources.Get .desktopSrc }}
+      {{ $mobileImage := resources.Get .mobileSrc }}
+      {{ if and $desktopImage $mobileImage }}
+      <picture>
+        <source media="(min-width: 761px)" srcset="{{ $desktopImage.RelPermalink }}"
+          width="{{ $desktopImage.Width }}" height="{{ $desktopImage.Height }}">
+        <img src="{{ $mobileImage.RelPermalink }}" width="{{ $mobileImage.Width }}" height="{{ $mobileImage.Height }}"
+          alt="{{ .alt }}" class="about-photo" loading="lazy" decoding="async">
+      </picture>
       {{ end }}
       {{ end }}
     </div>
