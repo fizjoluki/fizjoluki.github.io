@@ -1418,11 +1418,10 @@ html.map-dialog-open {
 }
 
 .about-photo {
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
   height: auto;
-  object-fit: cover;
   width: 100%;
 }
 
