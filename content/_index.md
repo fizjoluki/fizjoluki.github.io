@@ -76,7 +76,8 @@ about:
   title: "O mnie"
   subtitle: "Fizjoterapeuta Łukasz"
   photo:
-    src: "images/physio_profile.png"
+    desktopSrc: "images/me-desktop.webp"
+    mobileSrc: "images/me-mobile.webp"
     alt: "Fizjoterapeuta Łukasz - profil"
   bio: "Jestem magistrem fizjoterapii z 7-letnim doświadczeniem w neurorehabilitacji, rehabilitacji neurochirurgicznej oraz terapii bólowej. Moja praca koncentruje się na niesieniu pomocy pacjentom w ich domach, co pozwala na prowadzenie terapii w najbardziej komfortowych i naturalnych warunkach."
   education:
