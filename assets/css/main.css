@@ -1395,20 +1395,6 @@ html.map-dialog-open {
   margin: 0;
 }
 
-.pricing-payment-line {
-  display: inline;
-}
-
-@media (max-width: 600px) {
-  .pricing-payment-line {
-    display: block;
-  }
-
-  .pricing-payment-line+.pricing-payment-line {
-    margin-top: 0.2rem;
-  }
-}
-
 /* O mnie Section */
 .about-section {
   background: var(--paper-strong);
@@ -1506,19 +1492,6 @@ html.map-dialog-open {
   height: 3px;
   margin-top: 1.25rem;
   width: 4.5rem;
-}
-
-.contact-desc {
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 36rem;
-  margin-bottom: 0;
-}
-
-height: 3px;
-margin-top: 1.25rem;
-width: 4.5rem;
 }
 
 .contact-desc {

@@ -182,10 +182,7 @@
       {{ with .Params.pricing.payment }}
       <div class="pricing-payment">
         <h3>{{ .title }}</h3>
-        <p class="pricing-payment-desc">
-          <span class="pricing-payment-line">Gotówka, karta płatnicza lub BLIK.</span>
-          <span class="pricing-payment-line">Na życzenie wystawiam fakturę.</span>
-        </p>
+        <p>{{ .description }}</p>
       </div>
       {{ end }}
     </div>
@@ -243,7 +240,7 @@
   </div>
   <div class="contact-links">
     {{ with .Params.contact.phone }}
-    <a href="tel:{{ replaceRE " [^0-9+]" "" . }}">
+    <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">
       {{ partial "icon.html" "phone" }} {{ . }}
     </a>
     {{ end }}
