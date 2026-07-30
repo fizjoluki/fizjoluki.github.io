@@ -1095,12 +1095,6 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1.15rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.zone-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(27, 54, 93, 0.05);
 }
 
 .zone-card-with-prices {
