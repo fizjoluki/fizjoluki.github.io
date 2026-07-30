@@ -2,35 +2,27 @@
 <section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="hero-stage">
     {{ with .Params.hero_photo }}
-      {{ $desktop := resources.Get .desktop_src }}
-      {{ $mobile := resources.Get .mobile_src }}
-      {{ if and $desktop $mobile }}
-        {{ $desktopSmall := $desktop.Resize "1200x webp q82" }}
-        {{ $desktopMedium := $desktop.Resize "1920x webp q84" }}
-        {{ $desktopLarge := $desktop.Resize "2560x webp q86" }}
-        {{ $mobileSmall := $mobile.Resize "640x webp q82" }}
-        {{ $mobileMedium := $mobile.Resize "960x webp q84" }}
-        {{ $mobileLarge := $mobile.Resize "1280x webp q86" }}
-        <div class="hero-media">
-          <picture>
-            <source
-              type="image/webp"
-              media="(max-width: 1024px)"
-              srcset="{{ $mobileSmall.RelPermalink }} 640w, {{ $mobileMedium.RelPermalink }} 960w, {{ $mobileLarge.RelPermalink }} 1280w, {{ $mobile.RelPermalink }} {{ $mobile.Width }}w"
-              sizes="100vw">
-            <img
-              src="{{ $desktopMedium.RelPermalink }}"
-              srcset="{{ $desktopSmall.RelPermalink }} 1200w, {{ $desktopMedium.RelPermalink }} 1920w, {{ $desktopLarge.RelPermalink }} 2560w, {{ $desktop.RelPermalink }} {{ $desktop.Width }}w"
-              sizes="100vw"
-              width="{{ $desktopMedium.Width }}"
-              height="{{ $desktopMedium.Height }}"
-              alt="{{ .alt }}"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high">
-          </picture>
-        </div>
-      {{ end }}
+    {{ $desktop := resources.Get .desktop_src }}
+    {{ $mobile := resources.Get .mobile_src }}
+    {{ if and $desktop $mobile }}
+    {{ $desktopSmall := $desktop.Resize "1200x webp q82" }}
+    {{ $desktopMedium := $desktop.Resize "1920x webp q84" }}
+    {{ $desktopLarge := $desktop.Resize "2560x webp q86" }}
+    {{ $mobileSmall := $mobile.Resize "640x webp q82" }}
+    {{ $mobileMedium := $mobile.Resize "960x webp q84" }}
+    {{ $mobileLarge := $mobile.Resize "1280x webp q86" }}
+    <div class="hero-media">
+      <picture>
+        <source type="image/webp" media="(max-width: 1024px)"
+          srcset="{{ $mobileSmall.RelPermalink }} 640w, {{ $mobileMedium.RelPermalink }} 960w, {{ $mobileLarge.RelPermalink }} 1280w, {{ $mobile.RelPermalink }} {{ $mobile.Width }}w"
+          sizes="100vw">
+        <img src="{{ $desktopMedium.RelPermalink }}"
+          srcset="{{ $desktopSmall.RelPermalink }} 1200w, {{ $desktopMedium.RelPermalink }} 1920w, {{ $desktopLarge.RelPermalink }} 2560w, {{ $desktop.RelPermalink }} {{ $desktop.Width }}w"
+          sizes="100vw" width="{{ $desktopMedium.Width }}" height="{{ $desktopMedium.Height }}" alt="{{ .alt }}"
+          loading="eager" decoding="async" fetchpriority="high">
+      </picture>
+    </div>
+    {{ end }}
     {{ end }}
 
     <div class="hero-inner">
@@ -43,26 +35,27 @@
         <p class="hero-location">{{ .Params.location }}</p>
 
         {{ with .Params.hero_slogans }}
-          <ul class="hero-slogans">
-            {{ range . }}
-              <li>
-                <span class="slogan-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <span>{{ . }}</span>
-              </li>
-            {{ end }}
-          </ul>
+        <ul class="hero-slogans">
+          {{ range . }}
+          <li>
+            <span class="slogan-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span>{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
         {{ end }}
 
         <div class="actions">
           {{ with .Params.primary_action }}
-            <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
+          <a class="button button-secondary" href="{{ .url | safeURL }}">{{ .label }}</a>
           {{ end }}
           {{ with .Params.secondary_action }}
-            <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
+          <a class="button button-primary" href="{{ .url | safeURL }}">{{ .label }}</a>
           {{ end }}
         </div>
       </div>
@@ -76,13 +69,13 @@
   </div>
   <div class="service-list">
     {{ range .Params.services }}
-      <article class="service-item">
-        <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
-        <div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .summary }}</p>
-        </div>
-      </article>
+    <article class="service-item">
+      <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
+      <div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .summary }}</p>
+      </div>
+    </article>
     {{ end }}
   </div>
 </section>
@@ -90,31 +83,31 @@
 <section class="pricing-section" id="cennik" aria-labelledby="pricing-title">
   <div class="section-heading pricing-heading">
     <h2 id="pricing-title">{{ .Params.pricing.title }}</h2>
-    {{ with .Params.pricing.subtitle }}
-      <p class="section-subtitle">{{ . }}</p>
-    {{ end }}
   </div>
 
   <div class="pricing-container">
     <div class="pricing-zones">
       {{ range .Params.pricing.zones }}
-        {{ $zoneName := .name }}
-        <article class="zone-card{{ with .prices }} zone-card-with-prices{{ end }}">
-          <div class="zone-copy">
-            <h3 class="zone-name">{{ .name }}</h3>
-            <p class="zone-desc">{{ .description }}</p>
-          </div>
-          {{ with .prices }}
-            <ul class="zone-prices" aria-label="Ceny terapii dla: {{ $zoneName }}">
-              {{ range . }}
-                <li class="zone-price-row">
-                  <span class="zone-price-amount">{{ .amount }}</span>
-                  <span class="zone-price-duration">/ {{ .duration }}</span>
-                </li>
-              {{ end }}
-            </ul>
+      {{ $zoneName := .name }}
+      <article class="zone-card{{ with .prices }} zone-card-with-prices{{ end }}">
+        <div class="zone-copy">
+          <h3 class="zone-name">{{ .name }}</h3>
+          <p class="zone-desc">{{ .description }}</p>
+        </div>
+        {{ with .prices }}
+        <ul class="zone-prices" aria-label="Ceny terapii dla: {{ $zoneName }}">
+          {{ range . }}
+          <li class="zone-price-row">
+            <span class="zone-price-amount">{{ .amount }}</span>
+            <span class="zone-price-duration">/ {{ .duration }}</span>
+          </li>
           {{ end }}
-        </article>
+        </ul>
+        {{ end }}
+      </article>
+      {{ end }}
+      {{ with .Params.pricing.subtitle }}
+      <p class="pricing-subtitle"><em>{{ . }}</em></p>
       {{ end }}
     </div>
 
@@ -123,96 +116,74 @@
         <div class="pricing-map-heading">
           <h3 id="pricing-map-title">{{ .Params.pricing.map_title }}</h3>
           {{ with .Params.pricing.map_description }}
-            <p>{{ . }}</p>
+          <p>{{ . }}</p>
           {{ end }}
         </div>
 
         <figure class="pricing-map">
           {{ with .Params.pricing.map_photo }}
-            {{ with resources.Get .src }}
-              {{ $mapSmall := .Resize "480x webp q88" }}
-              {{ $mapMedium := .Resize "960x webp q90" }}
-              <a
-                class="pricing-map-trigger"
-                href="{{ .RelPermalink }}"
-                aria-label="Powiększ mapę stref dojazdu"
-                aria-haspopup="dialog"
-                aria-controls="pricing-map-dialog"
-                data-map-dialog-open>
-                <img
-                  src="{{ $mapMedium.RelPermalink }}"
-                  srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
-                  sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
-                  width="{{ .Width }}"
-                  height="{{ .Height }}"
-                  alt="{{ $.Params.pricing.map_photo.alt }}"
-                  class="pricing-map-img"
-                  loading="lazy"
-                  decoding="async">
-                <span class="pricing-map-zoom-hint" aria-hidden="true">
-                  <span class="pricing-map-zoom-icon">{{ partial "icon.html" "zoom-in" }}</span>
-                  Powiększ mapę
-                </span>
-              </a>
-            {{ end }}
+          {{ with resources.Get .src }}
+          {{ $mapSmall := .Resize "480x webp q88" }}
+          {{ $mapMedium := .Resize "960x webp q90" }}
+          <a class="pricing-map-trigger" href="{{ .RelPermalink }}" aria-label="Powiększ mapę stref dojazdu"
+            aria-haspopup="dialog" aria-controls="pricing-map-dialog" data-map-dialog-open>
+            <img src="{{ $mapMedium.RelPermalink }}"
+              srcset="{{ $mapSmall.RelPermalink }} {{ $mapSmall.Width }}w, {{ $mapMedium.RelPermalink }} {{ $mapMedium.Width }}w, {{ .RelPermalink }} {{ .Width }}w"
+              sizes="(min-width: 1152px) 537px, (min-width: 960px) calc(48vw - 16px), (min-width: 672px) 640px, calc(100vw - 2rem)"
+              width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.pricing.map_photo.alt }}"
+              class="pricing-map-img" loading="lazy" decoding="async">
+            <span class="pricing-map-zoom-hint" aria-hidden="true">
+              <span class="pricing-map-zoom-icon">{{ partial "icon.html" "zoom-in" }}</span>
+              Powiększ mapę
+            </span>
+          </a>
+          {{ end }}
           {{ end }}
           {{ with .Params.pricing.map_caption }}
-            <figcaption class="pricing-map-caption">
-              {{ . }}
-              {{ with $.Params.pricing.map_action }}
-                <a href="{{ .url | safeURL }}">{{ .label }}</a>
-              {{ end }}
-            </figcaption>
+          <figcaption class="pricing-map-caption">
+            {{ . }}
+            {{ with $.Params.pricing.map_action }}
+            <a href="{{ .url | safeURL }}">{{ .label }}</a>
+            {{ end }}
+          </figcaption>
           {{ end }}
         </figure>
 
         {{ with .Params.pricing.map_photo }}
-          {{ with resources.Get .src }}
-            <dialog
-              class="pricing-map-dialog"
-              id="pricing-map-dialog"
-              aria-labelledby="pricing-map-dialog-title">
-              <div class="pricing-map-dialog-heading">
-                <div>
-                  <h2 id="pricing-map-dialog-title">Mapa stref dojazdu</h2>
-                  <p>Przesuwaj mapę, aby zobaczyć szczegóły.</p>
-                </div>
-                <button
-                  class="pricing-map-dialog-close"
-                  type="button"
-                  aria-label="Zamknij powiększoną mapę"
-                  data-map-dialog-close>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="pricing-map-dialog-viewport">
-                <img
-                  class="pricing-map-dialog-img"
-                  data-map-dialog-image
-                  data-src="{{ .RelPermalink }}"
-                  width="{{ .Width }}"
-                  height="{{ .Height }}"
-                  alt="{{ $.Params.pricing.map_photo.alt }}"
-                  decoding="async">
-              </div>
-            </dialog>
-          {{ end }}
+        {{ with resources.Get .src }}
+        <dialog class="pricing-map-dialog" id="pricing-map-dialog" aria-labelledby="pricing-map-dialog-title">
+          <div class="pricing-map-dialog-heading">
+            <div>
+              <h2 id="pricing-map-dialog-title">Mapa stref dojazdu</h2>
+              <p>Przesuwaj mapę, aby zobaczyć szczegóły.</p>
+            </div>
+            <button class="pricing-map-dialog-close" type="button" aria-label="Zamknij powiększoną mapę"
+              data-map-dialog-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="pricing-map-dialog-viewport">
+            <img class="pricing-map-dialog-img" data-map-dialog-image data-src="{{ .RelPermalink }}"
+              width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.pricing.map_photo.alt }}" decoding="async">
+          </div>
+        </dialog>
+        {{ end }}
         {{ end }}
       </div>
 
       {{ with .Params.pricing.notes }}
-        <div class="pricing-notes" aria-label="Informacje o strefach i cenach">
-          {{ range . }}
-            <p>{{ . }}</p>
-          {{ end }}
-        </div>
+      <div class="pricing-notes" aria-label="Informacje o strefach i cenach">
+        {{ range . }}
+        <p>{{ . }}</p>
+        {{ end }}
+      </div>
       {{ end }}
 
       {{ with .Params.pricing.payment }}
-        <div class="pricing-payment">
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-        </div>
+      <div class="pricing-payment">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
       {{ end }}
     </div>
   </div>
@@ -222,43 +193,37 @@
   <div class="about-container">
     <div class="about-media">
       {{ with .Params.about.photo }}
-        {{ with resources.Get .src }}
-          {{ $profileImage := .Process "webp q88" }}
-          <img 
-            src="{{ $profileImage.RelPermalink }}" 
-            width="{{ $profileImage.Width }}" 
-            height="{{ $profileImage.Height }}" 
-            alt="{{ $.Params.about.photo.alt }}"
-            class="about-photo"
-            loading="lazy"
-            decoding="async">
-        {{ end }}
+      {{ with resources.Get .src }}
+      {{ $profileImage := .Process "webp q88" }}
+      <img src="{{ $profileImage.RelPermalink }}" width="{{ $profileImage.Width }}" height="{{ $profileImage.Height }}"
+        alt="{{ $.Params.about.photo.alt }}" class="about-photo" loading="lazy" decoding="async">
+      {{ end }}
       {{ end }}
     </div>
-    
+
     <div class="about-content">
       <div class="section-heading">
         <h2 id="about-title">{{ .Params.about.title }}</h2>
         <p class="section-subtitle">{{ .Params.about.subtitle }}</p>
       </div>
-      
+
       <p class="about-bio">{{ .Params.about.bio }}</p>
-      
+
       <div class="about-lists">
         <div class="about-list-group">
           <h3>{{ .Params.about.education.title }}</h3>
           <ul>
             {{ range .Params.about.education.items }}
-              <li>{{ . }}</li>
+            <li>{{ . }}</li>
             {{ end }}
           </ul>
         </div>
-        
+
         <div class="about-list-group">
           <h3>{{ .Params.about.courses.title }}</h3>
           <ul>
             {{ range .Params.about.courses.items }}
-              <li>{{ . }}</li>
+            <li>{{ . }}</li>
             {{ end }}
           </ul>
         </div>
@@ -275,22 +240,22 @@
   </div>
   <div class="contact-links">
     {{ with .Params.contact.phone }}
-      <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">
-        {{ partial "icon.html" "phone" }} {{ . }}
-      </a>
+    <a href="tel:{{ replaceRE "[^0-9+]" "" . }}">
+      {{ partial "icon.html" "phone" }} {{ . }}
+    </a>
     {{ end }}
     {{ with .Params.contact.email }}
-      <a href="mailto:{{ . }}">
-        {{ partial "icon.html" "mail" }} {{ . }}
-      </a>
+    <a href="mailto:{{ . }}">
+      {{ partial "icon.html" "mail" }} {{ . }}
+    </a>
     {{ end }}
   </div>
 </section>
 {{ end }}
 
 {{ define "scripts" }}
-  {{ with resources.Get "js/map-dialog.js" }}
-    {{ $script := . | minify | fingerprint }}
-    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
-  {{ end }}
+{{ with resources.Get "js/map-dialog.js" }}
+{{ $script := . | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+{{ end }}
 {{ end }}

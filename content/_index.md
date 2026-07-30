@@ -43,33 +43,33 @@ pricing:
     src: "images/strefy_krakow.webp"
     alt: "Orientacyjna mapa Krakowa z zaznaczonymi strefami dojazdu I, II i III"
   zones:
-    - name: "Strefa I:"
+    - name: "Strefa I"
       prices:
         - amount: "200 zł"
           duration: "60 min"
         - amount: "280 zł"
           duration: "90 min"
       description: "Czyżyny, Prądnik Czerwony, Mistrzejowice, Bieńczyce, część Nowej Huty oraz wybrane obszary sąsiednich dzielnic."
-    - name: "Strefa II:"
+    - name: "Strefa II"
       prices:
         - amount: "220 zł"
           duration: "60 min"
         - amount: "300 zł"
           duration: "90 min"
       description: "Podgórze, Grzegórzki, Prądnik Biały oraz wybrane obszary pozostałych dzielnic."
-    - name: "Strefa III:"
+    - name: "Strefa III"
       prices:
         - amount: "240 zł"
           duration: "60 min"
         - amount: "320 zł"
           duration: "90 min"
       description: "Pozostałe obszary Krakowa znajdujące się w granicach obwodnicy miasta."
-    - name: "Poza strefami:"
+    - name: "Poza strefami"
       description: "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
   notes:
     - "Podane ceny zawierają koszt dojazdu oraz opłaty związane z parkowaniem w strefie płatnego parkowania."
   payment:
-    title: "Płatności:"
+    title: "Płatności"
     description: "Gotówka, karta płatnicza lub BLIK. Na życzenie wystawiam fakturę."
 
 about:
