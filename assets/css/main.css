@@ -1070,12 +1070,6 @@ h3 {
   }
 }
 
-.section-subtitle {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-top: 0.5rem;
-}
-
 .pricing-zones {
   display: flex;
   flex-direction: column;
@@ -1399,22 +1393,47 @@ html.map-dialog-open {
 }
 
 .about-container {
+  column-gap: clamp(1.6rem, 4vw, 3.4rem);
   display: grid;
-  gap: clamp(1.6rem, 4vw, 3.4rem);
+  grid-template-areas:
+    "heading"
+    "media"
+    "content";
   grid-template-columns: 1fr;
+  row-gap: 0;
 }
 
 @media (min-width: 761px) {
   .about-container {
+    grid-template-areas:
+      "media heading"
+      "media content";
     grid-template-columns: 0.75fr 1.25fr;
   }
 }
 
+.about-heading {
+  display: block;
+  grid-area: heading;
+}
+
+.about-heading::after {
+  content: none;
+}
+
 .about-media {
   align-self: start;
+  grid-area: media;
   justify-self: center;
+  margin-bottom: clamp(1.6rem, 4vw, 3.4rem);
   width: 100%;
   max-width: 280px;
+}
+
+@media (min-width: 761px) {
+  .about-media {
+    margin-bottom: 0;
+  }
 }
 
 .about-photo {
@@ -1429,6 +1448,7 @@ html.map-dialog-open {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  grid-area: content;
 }
 
 .about-bio {
@@ -1471,14 +1491,14 @@ html.map-dialog-open {
   margin-bottom: 0.5rem;
 }
 
-/* Contact Styles Tweaks */
-.contact-subtitle {
+/* Wyróżnione podtytuły sekcji */
+.accented-subtitle {
   color: var(--muted);
   font-size: 1.15rem;
   margin: 0.5rem 0 1.25rem;
 }
 
-.contact-subtitle::after {
+.accented-subtitle::after {
   background: var(--accent);
   content: "";
   display: block;

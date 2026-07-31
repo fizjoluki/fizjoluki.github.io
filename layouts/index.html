@@ -191,6 +191,11 @@
 
 <section class="about-section" id="o-mnie" aria-labelledby="about-title">
   <div class="about-container">
+    <div class="section-heading about-heading">
+      <h2 id="about-title">{{ .Params.about.title }}</h2>
+      <p class="accented-subtitle">{{ .Params.about.subtitle }}</p>
+    </div>
+
     <div class="about-media">
       {{ with .Params.about.photo }}
       {{ $desktopImage := resources.Get .desktopSrc }}
@@ -207,11 +212,6 @@
     </div>
 
     <div class="about-content">
-      <div class="section-heading">
-        <h2 id="about-title">{{ .Params.about.title }}</h2>
-        <p class="section-subtitle">{{ .Params.about.subtitle }}</p>
-      </div>
-
       <p class="about-bio">{{ .Params.about.bio }}</p>
 
       <div class="about-lists">
@@ -240,7 +240,7 @@
 <section class="contact" id="kontakt" aria-labelledby="contact-title">
   <div>
     <h2 id="contact-title">{{ .Params.contact.title }}</h2>
-    <p class="contact-subtitle">{{ .Params.contact.subtitle }}</p>
+    <p class="accented-subtitle">{{ .Params.contact.subtitle }}</p>
     <p class="contact-desc">{{ .Params.contact.description }}</p>
   </div>
   <div class="contact-links">
