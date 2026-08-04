@@ -19,17 +19,48 @@ hero_slogans:
   - "Neurorehabilitacja"
   - "Rehabilitacja pooperacyjna"
 
+offer_intro: >-
+  Oferuję fizjoterapię domową na terenie Krakowa i okolic dostosowaną do stanu zdrowia,
+  możliwości oraz celów pacjenta. Pracuję przede wszystkim z osobami po udarze mózgu,
+  po zabiegach neurochirurgicznych i ortopedycznych oraz z pacjentami z przewlekłymi
+  dolegliwościami bólowymi. Rehabilitacja prowadzona w domu pozwala prowadzić terapię
+  w znanym i bezpiecznym środowisku oraz lepiej dostosować ćwiczenia do codziennego
+  funkcjonowania pacjenta. Każdy plan terapii poprzedzony jest oceną funkcjonalną
+  i doborem metod odpowiednich do indywidualnych potrzeb.
+
 services:
   - icon: "brain"
     title: "Neurorehabilitacja"
-    summary: "Kompleksowa terapia pacjentów po udarach mózgu, urazach czaszkowo-mózgowych, z chorobą Parkinsona, stwardnieniem rozsianym (SM) oraz innymi schorzeniami układu nerwowego. Celem jest odbudowa utraconych funkcji i poprawa samodzielności."
-  - icon: "scalpel"
+    summary: "Pracuję z osobami, u których choroba lub uszkodzenie układu nerwowego spowodowały trudności z poruszaniem się, wykonywaniem codziennych czynności lub utratę samodzielności."
+    list_intro: "Pomagam m.in. w takich jednostkach chorobowych jak:"
+    items:
+      - "udar mózgu"
+      - "uraz czaszkowo-mózgowy"
+      - "uraz rdzenia kręgowego"
+      - "choroba Parkinsona"
+      - "stwardnienie rozsiane (SM)"
+      - "stwardnienie zanikowe boczne (SLA)"
+      - "mózgowe porażenie dziecięce (MPD)"
+      - "uszkodzenia nerwów obwodowych"
+      - "inne schorzenia neurologiczne"
+  - icon: "knee"
     title: "Rehabilitacja pooperacyjna"
-    summary: "Rehabilitacja po zabiegach neurochirurgicznych i ortopedycznych, w tym po operacjach kręgosłupa (dyskopatie, stabilizacje), stawów obwodowych oraz innych zabiegach rekonstrukcyjnych. Wspieram bezpieczny powrót do możliwie najlepszej sprawności i samodzielności."
-  - icon: "spine"
-    title: "Masaż"
-    summary: "Masaż leczniczy, tkanek głębokich oraz techniki powięziowe dostosowane do indywidualnych potrzeb. Pomaga w redukcji napięcia mięśniowego, łagodzeniu przewlekłego bólu oraz przyspieszeniu regeneracji organizmu."
-
+    summary: "Pracuję z osobami wracającymi do sprawności po zabiegach neurochirurgicznych i ortopedycznych. Celem terapii jest bezpieczny powrót do codziennej aktywności oraz możliwie największej samodzielności."
+    list_intro: "Pomagam m.in. po takich zabiegach jak:"
+    items:
+      - "operacje kręgosłupa (mikrodiscektomia, stabilizacja, odbarczenie)"
+      - "operacje mózgu (np. z powodu guza, krwiaka, tętniaka)"
+      - "endoprotezoplastyka stawu biodrowego i kolanowego"
+      - "złamania wymagające leczenia operacyjnego"
+      - "inne zabiegi ortopedyczne i neurochirurgiczne"
+  - icon: "pain-points"
+    title: "Rehabilitacja funkcjonalna"
+    summary: "Pracuję z osobami, które potrzebują wsparcia w poprawie sprawności, bezpiecznym poruszaniu się oraz wykonywaniu codziennych czynności. Terapię dostosowuję do aktualnych możliwości, potrzeb i celów pacjenta."
+    list_intro: "Pomagam m.in. osobom z:"
+    items:
+      - "przewlekłymi dolegliwościami bólowymi"
+      - "zaburzeniami chodu i równowagi"
+      - "ograniczeniami sprawności utrudniającymi codzienne funkcjonowanie"
 pricing:
   title: "Cennik"
   subtitle: "Cennik obowiązuje od 07.2026 r."

@@ -67,13 +67,28 @@
   <div class="section-heading">
     <h2 id="offer-title">Rehabilitacja dopasowana do Ciebie</h2>
   </div>
+  {{ with .Params.offer_intro }}
+  <p class="offer-intro">{{ . }}</p>
+  {{ end }}
   <div class="service-list">
     {{ range .Params.services }}
     <article class="service-item">
       <div class="icon-circle" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
-      <div>
+      <div class="service-copy">
         <h3>{{ .title }}</h3>
-        <p>{{ .summary }}</p>
+        {{ with .summary }}
+        <p>{{ . }}</p>
+        {{ end }}
+        {{ with .list_intro }}
+        <p class="service-list-intro">{{ . }}</p>
+        {{ end }}
+        {{ with .items }}
+        <ul class="service-details">
+          {{ range . }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
       </div>
     </article>
     {{ end }}
