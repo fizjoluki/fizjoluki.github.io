@@ -73,25 +73,16 @@ pricing:
 
 about:
   title: "O mnie"
-  subtitle: "Łukasz Bochenek"
   photo:
     desktopSrc: "images/me-desktop.webp"
     mobileSrc: "images/me-mobile.webp"
     alt: "Fizjoterapeuta Łukasz Bochenek"
-  bio: "Jestem magistrem fizjoterapii z 7-letnim doświadczeniem w neurorehabilitacji, rehabilitacji neurochirurgicznej oraz terapii bólowej. Moja praca koncentruje się na niesieniu pomocy pacjentom w ich domach, co pozwala na prowadzenie terapii w najbardziej komfortowych i naturalnych warunkach."
-  education:
-    title: "Edukacja i doświadczenie"
-    items:
-      - "Absolwent Akademii Wychowania Fizycznego w Krakowie (kierunek: Fizjoterapia)"
-      - "7 lat pracy w szpitalach, gabinetach oraz w ramach rehabilitacji domowej"
-      - "Praca z pacjentami po udarach, w chorobach przewlekłych oraz po operacjach neurochirurgicznych"
-  courses:
-    title: "Wybrane kursy i szkolenia"
-    items:
-      - "PNF (Proprioceptive Neuromuscular Facilitation) - certyfikowany terapeuta"
-      - "Terapia manualna (mobilizacja stawów i tkanek miękkich)"
-      - "Suche igłowanie (Dry Needling) i terapia mięśniowo-powięziowa"
-      - "Medyczny Trening Terapeutyczny i Kinezjotaping"
+  paragraphs:
+    - "Nazywam się Łukasz Bochenek. Jestem magistrem fizjoterapii. Od ponad 7 lat zajmuję się głównie rehabilitacją neurologiczną i pooperacyjną."
+    - "Studia ukończyłem w 2017 roku na Akademii Wychowania Fizycznego w Krakowie. Przez kilka lat pracowałem w Klinicznym Oddziale Neurologicznym z Oddziałem Udarowym oraz w Oddziale Neurochirurgii 5 Wojskowego Szpitala Klinicznego z Polikliniką w Krakowie. Doświadczenie zdobywałem również w prywatnym gabinecie, gdzie prowadziłem terapię osób z przewlekłymi uszkodzeniami układu nerwowego oraz pacjentów po urazach układu mięśniowo-szkieletowego. W ostatnich latach zajmowałem się także fizjoterapią domową pacjentów ze znacznym stopniem niepełnosprawności."
+    - "Prowadziłem również zajęcia z podstaw metody Pilates dla studentów fizjoterapii w Krakowskiej Akademii im. Andrzeja Frycza-Modrzewskiego (obecnie Uniwersytet AFM), a także pełniłem rolę tłumacza podczas kursów terapii manualnej według Maitlanda. Już podczas studiów magisterskich uczestniczyłem w praktykach zawodowych w Finlandii (Rovaniemi) i Czechach (Klimkovice) w ramach programu Erasmus+, co poszerzyło moje spojrzenie na pracę w zawodzie fizjoterapeuty."
+    - "W pracy opieram się na wiedzy zdobytej podczas wielotygodniowych szkoleń z koncepcji Bobath, PNF oraz innych kursów z zakresu fizjoterapii neurologicznej. Uzupełnieniem mojego warsztatu są umiejętności zdobyte podczas kursów terapii manualnej według Maitlanda, diagnostyki ortopedycznej według Cyriaxa i szkoleń z zakresu metody Pilates."
+    - "Choć w pracy wykorzystuję elementy różnych koncepcji terapeutycznych, nie traktuję ich jako celu samego w sobie. Najważniejsze jest dla mnie dobranie metod odpowiadających problemowi i potrzebom konkretnego pacjenta."
 
 contact:
   title: "Kontakt"
