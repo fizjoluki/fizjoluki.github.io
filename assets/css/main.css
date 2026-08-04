@@ -551,6 +551,14 @@ h3 {
   width: 4.5rem;
 }
 
+.offer-intro {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: clamp(1.35rem, 3vw, 2rem) 0 0;
+  max-width: 66rem;
+}
+
 .service-list {
   display: grid;
   gap: clamp(0.9rem, 1.6vw, 1.15rem);
@@ -573,6 +581,32 @@ h3 {
   height: 4.5rem;
   margin: 0;
   width: 4.5rem;
+}
+
+.service-copy {
+  min-width: 0;
+}
+
+.service-item .service-list-intro {
+  color: var(--ink-soft);
+  font-weight: 650;
+  margin-top: 0.9rem;
+}
+
+.service-details {
+  color: var(--muted);
+  margin: 0.65rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.service-details li {
+  line-height: 1.5;
+  margin-top: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.service-details li::marker {
+  color: var(--accent-deep);
 }
 
 .manual {
