@@ -1418,7 +1418,12 @@ html.map-dialog-open {
 }
 
 .about-heading::after {
-  content: none;
+  background: var(--accent);
+  content: "";
+  display: block;
+  height: 3px;
+  margin: 1.25rem 0;
+  width: 4.5rem;
 }
 
 .about-media {
