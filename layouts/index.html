@@ -106,8 +106,13 @@
         {{ end }}
       </article>
       {{ end }}
-      {{ with .Params.pricing.subtitle }}
-      <p class="pricing-subtitle"><em>{{ . }}</em></p>
+
+      {{ with .Params.pricing.notes }}
+      <div class="pricing-notes" aria-label="Informacje o strefach i cenach">
+        {{ range . }}
+        <p>{{ . }}</p>
+        {{ end }}
+      </div>
       {{ end }}
     </div>
 
@@ -171,19 +176,15 @@
         {{ end }}
       </div>
 
-      {{ with .Params.pricing.notes }}
-      <div class="pricing-notes" aria-label="Informacje o strefach i cenach">
-        {{ range . }}
-        <p>{{ . }}</p>
-        {{ end }}
-      </div>
-      {{ end }}
-
       {{ with .Params.pricing.payment }}
       <div class="pricing-payment">
         <h3>{{ .title }}</h3>
         <p>{{ .description }}</p>
       </div>
+      {{ end }}
+
+      {{ with .Params.pricing.subtitle }}
+      <p class="pricing-subtitle"><em>{{ . }}</em></p>
       {{ end }}
     </div>
   </div>

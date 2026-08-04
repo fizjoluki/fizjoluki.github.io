@@ -64,10 +64,9 @@ pricing:
         - amount: "320 zł"
           duration: "90 min"
       description: "Pozostałe obszary Krakowa znajdujące się w granicach obwodnicy miasta."
-    - name: "Poza strefami"
-      description: "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
   notes:
     - "Podane ceny zawierają koszt dojazdu oraz opłaty związane z parkowaniem w strefie płatnego parkowania."
+    - "Okoliczne miejscowości oraz lokalizacje poza zaznaczonym obszarem wyceniane są indywidualnie."
   payment:
     title: "Płatności"
     description: "Gotówka, karta płatnicza lub BLIK. Na życzenie wystawiam fakturę."
