@@ -31,7 +31,7 @@ offer_intro: >-
 services:
   - icon: "brain"
     title: "Neurorehabilitacja"
-    summary: "Pomagam osobom, u których choroba lub uszkodzenie układu nerwowego spowodowały trudności z poruszaniem się, wykonywaniem codziennych czynności lub utratę samodzielności."
+    summary: "Pracuję z osobami, u których choroba lub uszkodzenie układu nerwowego spowodowały trudności z poruszaniem się, wykonywaniem codziennych czynności lub utratę samodzielności."
     list_intro: "Pomagam m.in. w takich jednostkach chorobowych jak:"
     items:
       - "udar mózgu"
@@ -45,7 +45,7 @@ services:
       - "inne schorzenia neurologiczne"
   - icon: "knee"
     title: "Rehabilitacja pooperacyjna"
-    summary: "Pomagam osobom wracającym do sprawności po zabiegach neurochirurgicznych i ortopedycznych. Celem terapii jest bezpieczny powrót do codziennej aktywności oraz możliwie największej samodzielności."
+    summary: "Pracuję z osobami wracającymi do sprawności po zabiegach neurochirurgicznych i ortopedycznych. Celem terapii jest bezpieczny powrót do codziennej aktywności oraz możliwie największej samodzielności."
     list_intro: "Pomagam m.in. po takich zabiegach jak:"
     items:
       - "operacje kręgosłupa (mikrodiscektomia, stabilizacja, odbarczenie)"
@@ -53,9 +53,10 @@ services:
       - "endoprotezoplastyka stawu biodrowego i kolanowego"
       - "złamania wymagające leczenia operacyjnego"
       - "inne zabiegi ortopedyczne i neurochirurgiczne"
-  - icon: "person"
-    title: "Inne"
-    list_intro: "Pomagam również osobom z:"
+  - icon: "pain-points"
+    title: "Rehabilitacja funkcjonalna"
+    summary: "Pracuję z osobami, które potrzebują wsparcia w poprawie sprawności, bezpiecznym poruszaniu się oraz wykonywaniu codziennych czynności. Terapię dostosowuję do aktualnych możliwości, potrzeb i celów pacjenta."
+    list_intro: "Pomagam m.in. osobom z:"
     items:
       - "przewlekłymi dolegliwościami bólowymi"
       - "zaburzeniami chodu i równowagi"
