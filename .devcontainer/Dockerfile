@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
-ARG HUGO_VERSION=0.164.0
+ARG HUGO_VERSION=0.165.0
 ARG TARGETARCH
 
 RUN apt-get update \
